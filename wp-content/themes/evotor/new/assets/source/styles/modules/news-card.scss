@@ -1,0 +1,41 @@
+.news-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  @media #{$mq-tablet} {
+    margin-bottom: 40px;
+  }
+
+  @media #{$mq-mobile} {
+    margin-bottom: 30px;
+  }
+
+  h2, a {
+    @include paragraph;
+  }
+
+  h2 {
+    font-family: $serif-700;
+  }
+
+  a {
+    display: inline;
+    color: $orange;
+    padding-right: 30px;
+    
+    &:not(:last-child) {
+      margin-bottom: 20px;
+
+      @media #{$mq-mobile} {
+        margin-bottom: 10px;
+        padding-right: 0;
+      }
+    }
+
+    &:hover {
+      color: #D07422;
+    }
+      
+  }
+}

@@ -1,0 +1,92 @@
+.search-box {
+  position: absolute;
+  top: 12px;
+  opacity: 0;
+  visibility: hidden;
+  @include transition(all);
+  @include respond-below(xlg) {
+    position: relative;
+    top: -44px;
+  }
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+  &.content-padding {
+    padding: 0;
+    width: 100%;
+  }
+  .new-wrapper {
+    width: 100%;
+  }
+
+  .input-wrapper {
+    position: relative;
+  }
+  input[name='s'] {
+    height: 48px;
+    box-sizing: border-box;
+    padding: 12px 24px;
+    width: 100%;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000;
+    border: 0;
+    outline: none 0;
+    font-family: Graphik Regular, sans-serif;
+    -webkit-appearance: none;
+    appearance: none;
+    @include respond-below(xlg) {
+      height: 34px;
+      font-size: 12px;
+      line-height: 16px;
+      padding: 8px 12px;
+    }
+    &::placeholder {
+      font-size: 16px;
+      line-height: 22px;
+      color: var(--placeholder-color);
+      font-family: Graphik Regular, sans-serif;
+      @include respond-below(xlg) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    // Убрать системный крестик очистки поля ввода поиска.
+    input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+    input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+    input[type="search"]::-webkit-search-decoration,
+    input[type="search"]::-webkit-search-cancel-button,
+    input[type="search"]::-webkit-search-results-button,
+    input[type="search"]::-webkit-search-results-decoration { display: none; }
+  }
+
+  .cross-hair {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 32px;
+    height: 32px;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cmask id='mask0_2_3' style='mask-type:alpha' maskUnits='userSpaceOnUse' x='0' y='0' width='18' height='18'%3E%3Cpath d='M17.3932 2.48699C17.9123 1.96784 17.9123 1.12614 17.3932 0.606991C16.874 0.087841 16.0323 0.087841 15.5132 0.606991L8.9998 7.1203L2.4865 0.606991C1.96736 0.087841 1.12565 0.087841 0.606499 0.606991C0.087359 1.12614 0.087359 1.96784 0.606499 2.48699L7.1198 9.0003L0.606499 15.5137C0.087359 16.0328 0.087359 16.8745 0.606499 17.3937C1.12565 17.9128 1.96736 17.9128 2.4865 17.3937L8.9998 10.8803L15.5132 17.3937C16.0323 17.9128 16.874 17.9128 17.3932 17.3937C17.9123 16.8745 17.9123 16.0328 17.3932 15.5137L10.8798 9.0003L17.3932 2.48699Z' fill='%23F05023'/%3E%3C/mask%3E%3Cg mask='url(%23mask0_2_3)'%3E%3Cpath d='M25 -7H-7V25H25V-7Z' fill='%23727272'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: center center;
+    cursor: pointer;
+    @include respond-below(xlg) {
+      background-size: 14px 14px;
+      width: 24px;
+      height: 24px;
+    }
+    @include respond-below(xs) {
+      top: 5px;
+    }
+  }
+
+  @import "relevant-options";
+}
+
+// Подсвечивание найденных фраз в поиске
+.relevanssi-query-term {
+  color: var(--orange);
+}

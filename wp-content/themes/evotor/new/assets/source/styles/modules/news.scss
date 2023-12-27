@@ -1,0 +1,17 @@
+.news {
+  margin-top: 60px;
+
+  .article {
+    h2, p, table.narrow, .share {
+      margin-left: 0;
+    }
+
+    @media #{$mq-mobile} {
+      margin-bottom: 80px;
+    }
+  }
+
+  @media #{$mq-mobile} {
+    margin-top: 0;
+  }
+}

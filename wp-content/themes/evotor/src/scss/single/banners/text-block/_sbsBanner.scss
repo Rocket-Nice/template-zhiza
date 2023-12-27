@@ -1,0 +1,327 @@
+.sbsBanner {
+  padding: 16px;
+  background-color: #ECEBE9;
+  border-right: 4px;
+  position: relative;
+
+  @include respond-below(md) {
+    padding: 32px;
+  }
+  @include respond-below(sm) {
+    padding: 16px;
+  }
+
+  .subscribe--title {
+    font-family: Kazimir-Bold, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    margin-bottom: 16px;
+    @include respond-below(md) {
+      max-width: 472px;
+      font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 8px;
+    }
+    @include respond-below(sm) {
+      text-align: center;
+      max-width: initial;
+    }
+  }
+
+  .subscribe--description {
+    font-size: 16px;
+    line-height: 22px;
+    color: #000;
+    margin-bottom: 16px;
+    @include respond-below(md) {
+      margin-bottom: 8px;
+      max-width: 472px;
+    }
+    @include respond-below(sm) {
+      text-align: center;
+      max-width: initial;
+    }
+  }
+
+  .subscribe--form {
+    display: flex;
+    flex-direction: column;
+  }
+  .form--row {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+    @include respond-below(md) {
+      flex-direction: row;
+      margin-bottom: 8px;
+    }
+    @include respond-below(sm) {
+      flex-direction: column;
+      margin-bottom: 16px;
+    }
+    a {
+      display: block;
+    }
+  }
+
+  .error {
+    margin: 8px 0;
+    display: flex;
+    color: var(--errorColor);
+    @include respond-below(sm) {
+      margin-bottom: 16px;
+    }
+    .txt {
+      font-family: 'Graphik Regular', sans-serif;
+      display: inline;
+      font-size: 12px;
+      line-height: 16px;
+      @include respond-below(sm) {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+    svg {
+      flex-shrink: 0;
+      margin-right: 5px;
+      fill: var(--errorColor);
+    }
+    a {
+      display: inline;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      @include transition(all);
+      color: var(--errorColor);
+      &:hover, &:focus, &:active {
+        color: var(--policyHoverColor);
+      }
+    }
+  }
+
+  .form--container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 16px;
+    max-width: initial;
+    @include respond-below(md) {
+      margin-bottom: 0;
+      flex-direction: row;
+      max-width: 464px;
+    }
+    @include respond-below(sm) {
+      flex-direction: column;
+      max-width: initial;
+    }
+  }
+  .form {
+    @include respond-below(md) {
+      max-width: 464px;
+      width: 100%;
+    }
+    @include respond-below(sm) {
+      max-width: initial;
+    }
+    input[type="email"] {
+      box-sizing: border-box;
+      display: block;
+      font-family: 'Graphik Regular', sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      max-width: 100%;
+      width: 100%;
+      background-color: white;
+      padding: 6px 16px 9px;
+      border: 1px solid #a3a3a3;
+      color: #a3a3a3;
+      height: 40px;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+      -webkit-appearance: none;
+      margin-bottom: 8px;
+      @include respond-below(md) {
+        height: 42px;
+        max-width: 296px;
+        margin-right: 16px;
+        margin-bottom: 0;
+      }
+      @include respond-below(sm) {
+        max-width: initial;
+        margin-bottom: 8px;
+      }
+
+      &:hover, &:focus, &:active {
+        border: 1px solid var(--orange);
+      }
+
+      &::placeholder {
+        color: #a3a3a3;
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+    .form--button--wrapper {
+      border: 1px solid var(--orange);
+      @include transition(all);
+      @include respond-below(md) {
+        height: fit-content;
+      }
+      &:hover {
+        border: 1px solid var(--orange);
+        .form--button {
+          bottom: 4px;
+          right: 4px;
+        }
+      }
+    }
+    .form--button {
+      position: relative;
+      bottom: 0;
+      right: 0;
+      font-family: "Graphik Semibold", sans-serif;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 22px;
+      padding: 9px 21px;
+      color: white;
+      background-color: var(--orange);
+      border: 1px solid var(--orange);
+      cursor: pointer;
+      height: 40px;
+      width: 100%;
+      @include transition(all);
+    }
+  }
+
+  .social-list {
+    display: flex;
+    @include respond-above(md) {
+      justify-content: space-between;
+    }
+    @include respond-below(md) {
+      margin-left: 16px;
+    }
+    @include respond-below(sm) {
+      justify-content: center;
+      margin-top: 16px;
+      margin-left: 0;
+    }
+    a {
+      border: 1px solid transparent;
+      border-radius: 100%;
+      width: 40px;
+      height: 40px;
+      @include transition(all);
+      &:hover {
+        border: 1px solid var(--orange);
+        svg {
+          bottom: 3px;
+          right: 3px;
+        }
+      }
+    }
+    svg {
+      position: relative;
+      bottom: 0;
+      right: 0;
+      @include transition(all);
+      .figure {
+        fill: var(--svgColor);
+      }
+      .bg {
+        @include transition(all);
+        fill: white;
+      }
+    }
+    a {
+      &:not(:last-child) {
+        @include respond-below(md) {
+          margin-right: 8px;
+        }
+        @include respond-below(sm) {
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+
+  .policy {
+    font-family: 'Graphik Regular', sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: var(--policyColor);
+    @include respond-below(sm) {
+      text-align: center;
+    }
+
+    a {
+      color: var(--policyHoverColor);
+      text-decoration: underline 1px rgba(255, 255, 255, 0);
+      transition: text-decoration-color 300ms;
+      text-underline-offset: 5px;
+      &:hover, &:focus, &:active {
+        text-decoration-color: var(--orange);
+      }
+    }
+  }
+
+  .text--container {
+    position: relative;
+    z-index: 2;
+  }
+  .big-letter {
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    z-index: 1;
+
+    .tablet-letter {
+      display: none;
+      @include respond-between(sm, md) {
+        display: block;
+      }
+    }
+    .mobile-letter {
+      @include respond-above(sm) {
+        display: none;
+      }
+    }
+  }
+
+  .success {
+    display: flex;
+    padding: 22px 8px 22px 8px; // за вычетом внешнего отступа у .wrapper
+    z-index: 10;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    @include respond-below(md) {
+      flex-direction: row;
+      padding: 56px 8px;
+    }
+    @include respond-below(xs) {
+      flex-direction: column;
+      padding: 22px 8px;
+    }
+
+    .img {
+      margin-bottom: 24px;
+      @include respond-between(xs, md) {
+        margin-right: 16px;
+      }
+      .fill {
+        fill: var(--successImageColor);
+      }
+    }
+    .text {
+      font-family: "Kazimir Bold", sans-serif;
+      font-size: 20px;
+      line-height: 26px;
+      font-weight: 700;
+      color: var(--successText);
+      text-align: center;
+    }
+  }
+}

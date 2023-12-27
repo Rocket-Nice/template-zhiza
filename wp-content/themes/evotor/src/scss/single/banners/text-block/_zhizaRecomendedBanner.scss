@@ -1,0 +1,72 @@
+.zhizaRecommendedBanner {
+  position: relative;
+  display: flex;
+  background-color: var(--yellow);
+  border-radius: 4px;
+  padding: 48px 16px 16px 16px;
+  @include respond-below(md) {
+    margin-top: 40px;
+    flex-direction: row;
+    padding: 40px 24px 24px;
+  }
+  @include respond-below(xs) {
+    flex-direction: column;
+  }
+
+  .info-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .text {
+    font-size: 16px;
+    font-family: Graphik Bold, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    color: var(--black);
+    @include respond-below(md) {
+      font-family: Kazimir-Bold, sans-serif;
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 700;
+    }
+  }
+
+  .btn--wrapper {
+    margin-top: 16px;
+    @include respond-between(xs, md) {
+      max-width: 204px;
+    }
+  }
+
+  .img {
+    position: absolute;
+    right: -41px;
+    top: -26px;
+    @include respond-below(lg) {
+      right: 0;
+    }
+    @include respond-below(md) {
+      right: unset;
+      left: 24px;
+      top: -32px;
+    }
+  }
+
+  .circle {
+    display: none;
+    width: 96px;
+    height: 96px;
+    border-radius: 100px;
+    @include respond-below(md) {
+      display: block;
+      margin-right: 24px;
+    }
+    @include respond-below(xs) {
+      margin-bottom: 16px;
+      width: 64px;
+      height: 64px;
+    }
+  }
+}

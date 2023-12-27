@@ -1,0 +1,30 @@
+formats = [
+	{
+		"name": "1-1-1",
+		"columns": [
+			{"count":1, "width":1},
+			{"count":1, "width":1},
+			{"count":1, "width":1}
+		]
+	},
+	{
+		"name": "1-1",
+		"columns": [
+			{"count":1, "width":1},
+			{"count":1, "width":1}
+		]
+	},
+	{
+		"name": "1-2",
+		"columns": [
+			{"count":1, "width":1},
+			{"count":1, "width":2}
+		]
+	},
+	{
+		"name": "1",
+		"columns": [
+			{"count":1, "width":1}
+		]
+	}
+]

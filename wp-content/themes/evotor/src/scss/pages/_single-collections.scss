@@ -1,0 +1,115 @@
+$pc_banner_height: 248px;
+$mobile_banner_height: 360px;
+
+.collection-image-banner {
+  position: relative;
+  width: 100%;
+  height: $pc_banner_height;
+  background-color: #DF5B35;
+  margin-bottom: 24px;
+  overflow: hidden;
+
+  @include respond-below(xs) {
+    height: $mobile_banner_height;
+    margin-bottom: 16px;
+  }
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    height: $pc_banner_height;
+
+    @include respond-below(xs) {
+      height: $mobile_banner_height;
+    }
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      content: '';
+      background: linear-gradient(270deg, rgba(38, 38, 38, 0) 0%,
+        rgba(38, 38, 38, 0.2) 26.04%, rgba(38, 38, 38, 0.7) 63.02%, #262626 100%);
+      width: 100%;
+      height: $pc_banner_height;
+
+      @include respond-below(xs) {
+        background: linear-gradient(180deg, rgba(223, 91, 53, 0) 0%,
+          rgba(38, 38, 38, 0) 0.01%, rgba(38, 38, 38, 0.5) 49.31%, #262626 100%);
+        height: $mobile_banner_height;
+      }
+    }
+
+    img, picture {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .banner-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: $pc_banner_height;
+    width: 100%;
+    padding: 24px;
+
+    @include respond-below(xlg) {
+      padding: 24px;
+    }
+
+    @include respond-below(xs) {
+      padding: 18px 16px 24px 16px;
+      height: $mobile_banner_height;
+    }
+
+    .collection-info {
+      display: flex;
+      flex-direction: column;
+      font-family: 'Graphik Regular', sans-serif;
+      color: white;
+
+      .type {
+        font-size: 16px;
+        line-height: 22px;
+        text-transform: uppercase;
+        padding-bottom: 8px;
+        @include respond-below(xs) {
+          text-align: center;
+        }
+      }
+
+      .collection-title {
+        font-family: 'Kazimir Bold', sans-serif;
+        font-size: 48px;
+        font-weight: 700;
+        line-height: 56px;
+        padding-bottom: 8px;
+        @include respond-below(md) {
+          font-size: 32px;
+          line-height: 38px;
+        }
+        @include respond-below(xs) {
+          text-align: center;
+          font-size: 24px;
+          line-height: 32px;
+        }
+      }
+
+      .short-description {
+        font-size: 16px;
+        line-height: 22px;
+        max-width: 600px;
+        @include respond-below(xs) {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+@import 'components/collection-card';

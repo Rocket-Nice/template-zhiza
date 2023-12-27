@@ -1,0 +1,197 @@
+.page-author {
+  .about--author {
+    min-height: 256px;
+    padding-bottom: 56px;
+    background-color: var(--gray);
+    @include respond-below(sm) {
+      padding-bottom: 36px;
+      min-height: 136px;
+    }
+    @include respond-below(xs) {
+      padding-bottom: 24px;
+    }
+
+    .no-image--padding {
+      padding-top: 23px;
+
+      .photo {
+        display: none;
+      }
+      &.author--info {
+        grid-template-areas:
+            "title"
+            "description" !important;
+        grid-template-columns: 1fr !important;
+        grid-template-rows: 1fr !important;
+      }
+    }
+
+    .author--info {
+      display: grid;
+      grid-template-columns: 128px 1fr;
+      grid-template-rows: 40px 1fr;
+      gap: 12px 28px;
+      grid-template-areas:
+        "image title"
+        "image description";
+      @include respond-below(sm) {
+        grid-template-columns: 90px 1fr;
+        grid-template-rows: 90px 1fr;
+        gap: 16px;
+        grid-template-areas:
+        "image title"
+        "description description";
+      }
+      @include respond-below(xs) {
+        padding-top: 16px;
+        grid-template-columns: 64px 1fr;
+        grid-template-rows: 64px 1fr;
+      }
+
+      .photo {
+        flex-shrink: 0;
+        width: 128px;
+        height: 128px;
+        grid-area: image;
+        @include respond-below(sm) {
+          width: 90px;
+          height: 90px;
+        }
+        @include respond-below(xs) {
+          width: 64px;
+          height: 64px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 100px;
+          text-align: center;
+          vertical-align: center;
+          background-color: var(--another-gray);
+          object-fit: cover;
+        }
+      }
+
+      .title {
+        color: var(--black);
+        grid-area: title;
+        padding-top: 8px;
+        @include respond-below(sm) {
+          align-self: center;
+        }
+      }
+
+      .description {
+        grid-area: description;
+        font-family: 'Graphik Regular', sans-serif;
+        font-size: 16px;
+        line-height: 22px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .author--posts {
+    margin-top: 32px;
+    @include respond-below(sm) {
+      margin-top: 24px;
+    }
+    .section--title {
+      font-family: "Kazimir Bold", sans-serif;
+      color: var(--black);
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--grayDarker);
+      @include respond-below(sm) {
+        padding-bottom: 16px;
+      }
+    }
+
+    .post--list {
+      display: grid;
+      grid-auto-rows: 1fr;
+      margin-bottom: 27px;
+
+      &__item {
+        display: grid;
+        border-bottom: 1px solid var(--grayDarker);
+        padding: 16px 0;
+        grid-template-areas: "image title";
+        grid-template-columns: 239px 1fr;
+        gap: 0 24px;
+        @include respond-below(xs) {
+          gap: 16px 0;
+          grid-template-columns: 1fr;
+          grid-template-rows: 146px 1fr;
+          grid-template-areas:
+            "image"
+            "title";
+        }
+
+        .img {
+          display: block;
+          width: 239px;
+          height: 146px;
+          grid-area: image;
+          @include respond-below(xs) {
+            width: 100%;
+          }
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-color: var(--grayDarker);
+          }
+        }
+        .text {
+          display: flex;
+          flex-direction: column;
+          grid-area: title;
+          justify-content: center;
+          .title {
+            font-family: "Kazimir Bold", sans-serif;
+            margin-bottom: 16px;
+            font-size: 20px;
+            line-height: 26px;
+            font-weight: 700;
+            color: $black;
+            @include transition(color);
+            &:hover, &:focus, &:active {
+              color: var(--orange);
+            }
+            @include respond-below(xs) {
+              font-size: 16px;
+              line-height: 24px;
+            }
+          }
+          .info {
+            display: flex;
+            align-items: center;
+            .category {
+              font-family: "Graphik Semibold", sans-serif;
+              color: var(--orange);
+              text-transform: uppercase;
+              font-weight: 600;
+              font-size: 12px;
+              line-height: 16px;
+            }
+            .date {
+              font-size: 12px;
+              line-height: 16px;
+              color: var(--grayLighter);
+              padding-bottom: 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.square {
+  width: 4px;
+  height: 4px;
+  transform: rotate(-45deg);
+  background-color: var(--orange);
+  margin: 0 8px;
+}

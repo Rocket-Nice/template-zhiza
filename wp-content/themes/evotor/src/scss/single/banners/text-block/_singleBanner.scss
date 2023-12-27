@@ -1,0 +1,88 @@
+.singleBanner,
+.postBanner {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "img"
+    "banner-text";
+
+  @include respond-below(md) {
+    grid-template-areas:
+      "img banner-text";
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+  }
+
+  &.no-image {
+    grid-template-areas:
+      "banner-text"
+      "bannerADS";
+  }
+  &.no-text-no-image {
+    grid-template-areas:
+      "bannerADS bannerADS";
+  }
+
+  &.haveADS {
+    grid-template-areas:
+      "img"
+      "banner-text"
+      "bannerADS";
+
+    @include respond-below(md) {
+      grid-template-areas:
+        "img banner-text"
+        "bannerADS bannerADS";
+    }
+  }
+
+  .ads-info {
+    grid-area: bannerADS;
+  }
+
+  img {
+    display: block;
+    width: max-content;
+    height: 100%;
+    max-width: 240px;
+    max-height: 200px;
+    grid-area: img;
+    object-fit: contain;
+
+    @include respond-below(md) {
+      max-width: 120px;
+    }
+  }
+
+  .banner-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    font-family: Graphik Regular, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    grid-area: banner-text;
+
+    @include respond-below(md) {
+      display: flex;
+      max-width: 316px;
+      justify-content: center;
+      margin-top: 0;
+    }
+
+    a {
+      color: var(--orange);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  }
+
+  .additional-text {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: black;
+    margin-top: 8px;
+  }
+}

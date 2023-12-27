@@ -1,0 +1,363 @@
+@charset "UTF-8";
+
+// Media query mixins
+@import "basic/variables";
+@import "basic/mixins";
+@import "components/common";
+//
+
+//
+@import 'scss-reset/_reset.scss';
+
+//
+@import "vendor/likely"; // Стили для блока шэринга статей
+@import "basic/fonts";
+@import "owl.carousel";
+@import "vendor/jquery.fancybox";
+
+html {
+  height: 100%;
+}
+
+a {
+  // Reset почему-то не сбросил стиль подчёркивания ссылок
+  text-decoration: none;
+  font-family: Graphik Regular, sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+* {
+  font-family: Graphik Regular, sans-serif;
+}
+
+.bg--gray {
+  background-color: $background_color;
+}
+
+.page-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  margin-top: $float_header_height;
+
+  @include respond-below(xlg) {
+    margin-top: $float_header_height_mobile;
+  }
+}
+
+.content-padding {
+  @include respond-below(xlg) {
+    padding: 0 24px;
+  }
+
+  @include respond-below(xs) {
+    padding: 0 16px;
+  }
+}
+
+.new-wrapper {
+  max-width: 1032px;
+  margin: 0 auto;
+  width: 100%;
+
+  @include respond-below(md) {
+    &.new-wrapper__width-unset {
+      max-width: unset;
+    }
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+
+// Подписка\отписка
+@import "sub-unsubscribe";
+@import "not-found";
+@import "subscribe-modal";
+@import "components/new-float-menu";
+@import "cookie_banner";
+
+// Новый footer
+@import "components/footer";
+
+// TODO переименовать везде
+p.subs_succes {
+  font-size: 20px !important;
+  display: none !important;
+  text-align: center !important;
+
+  &.open {
+    display: block !important;
+  }
+}
+
+//
+
+@import "components/sitemap";
+
+#commentform .g-recaptcha {
+  display: none;
+}
+
+@import "components/breadcrumbs";
+@import "pages/single-collections";
+@import "components/paginator";
+@import "components/sliders/slider-block";
+
+.f-48 {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: 700;
+  font-family: 'Kazimir-Bold', sans-serif;
+
+  @include respond-below(md) {
+    font-size: 32px;
+    line-height: 38px;
+  }
+
+  @include respond-below(xs) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.f-32 {
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 700;
+  font-family: 'Kazimir-Bold', sans-serif;
+
+  @include respond-below(md) {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  @include respond-below(xs) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.mt-24 {
+  margin-top: 24px;
+
+  @include respond-below(md) {
+    margin-top: 20px;
+  }
+
+  @include respond-below(xs) {
+    margin-top: 16px;
+  }
+}
+
+.mb-40 {
+  margin-bottom: 40px;
+
+  @include respond-below(md) {
+    margin-bottom: 36px;
+  }
+
+  @include respond-below(xs) {
+    margin-bottom: 32px;
+  }
+}
+
+.mb-32 {
+  margin-bottom: 32px;
+
+  @include respond-below(md) {
+    margin-bottom: 28px;
+  }
+
+  @include respond-below(xs) {
+    margin-bottom: 24px;
+  }
+}
+
+.mb-24 {
+  margin-bottom: 24px;
+
+  @include respond-below(md) {
+    margin-bottom: 20px;
+  }
+
+  @include respond-below(xs) {
+    margin-bottom: 16px;
+  }
+}
+
+.page-pb-override {
+  @include respond-below(xs) {
+    padding-bottom: 24px !important;
+  }
+}
+
+.page-breadcrumbs.breadcrumb__default-page {
+  padding: 25px 0 26px 0;
+  overflow: auto;
+
+  @include respond-below(xs) {
+    padding: 25px 0 10px;
+  }
+
+  svg {
+    fill: $gray;
+
+    @include respond-below(xs) {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  li {
+    &:after {
+      border-color: $gray;
+    }
+  }
+
+  span {
+    color: $gray;
+  }
+
+  &:last-child {
+    span {
+      width: max-content;
+    }
+  }
+}
+
+
+@import "pages/about-us";
+@import "pages/post-author";
+
+.new-slider-nav {
+  .arrow-wrapper {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    border-radius: 100px !important;
+    border: 1px solid transparent;
+    @include transition(all);
+  }
+
+  .owl-prev,
+  .owl-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid transparent !important;
+    border-radius: 100%;
+    @include transition(all);
+
+    &:hover {
+      border: 1px solid var(--orange) !important;
+
+      .arrow-wrapper {
+        bottom: 3px;
+        right: 3px;
+        width: 48px;
+        height: 48px;
+      }
+    }
+  }
+
+  .owl-nav {
+    button {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 1;
+      @include transition(all);
+
+      &.disabled {
+        visibility: hidden;
+        opacity: 0;
+      }
+    }
+
+    $arrowOffset: -76px;
+
+    .owl-prev {
+      left: $arrowOffset;
+    }
+
+    .owl-next {
+      right: $arrowOffset;
+
+      img {
+        transform: scale(-1, 1);
+      }
+    }
+  }
+
+  .owl-dots {
+    margin-top: 24px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    $dotsOrange: #f05023;
+
+    .owl-dot {
+      width: 10px;
+      height: 10px;
+      border: 1px solid $dotsOrange;
+      border-radius: 100px;
+      margin: 0 5px;
+
+      &.active {
+        background-color: $dotsOrange;
+      }
+    }
+  }
+}
+
+/**
+ * Внутренний отступ от краев у страниц без блоков, расширяемых на всю ширину
+ */
+.content-padding {
+  @include respond-below(xlg) {
+    padding: 32px;
+  }
+
+  @include respond-below(md) {
+    padding: 24px;
+  }
+
+  @include respond-below(xs) {
+    padding: 16px;
+  }
+}
+
+.overflow-tablet {
+  @include respond-below(md) {
+    overflow-x: hidden;
+  }
+}
+
+@import "pages/front-page";
+
+*[data-place] {
+  cursor: pointer;
+}
+
+@import "pages/search";
+
+.body--disabled--mobile {
+  @include respond-below(xs) {
+    overflow: hidden;
+  }
+}

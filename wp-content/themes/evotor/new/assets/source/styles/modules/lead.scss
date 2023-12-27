@@ -1,0 +1,15 @@
+.lead {
+  margin-top: 70px;
+  margin-bottom: 166px;
+
+  @media #{$mq-mobile} {
+    margin-bottom: 70px;
+  }
+
+  p {
+    font-size: 28px;
+    line-height: 36px;
+    max-width: 100%;
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,65 @@
+.collection-main-page {
+  margin: 56px 0;
+  @include respond-below(xlg) {
+    margin: 48px 0;
+  }
+
+  // Обнулить верхний паддинг для блока
+  .content-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .collection-list {
+    display: grid;
+    grid-template-columns: repeat(3, 280px);
+    gap: 16px 58px;
+    @include respond-below(xlg) {
+      grid-template-columns: repeat(2, 280px);
+      gap: 16px 58px;
+    }
+    @include respond-below(sm) {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 16px 58px;
+    }
+
+    .item {
+      a {
+        position: relative;
+        font-family: "Graphik Semibold", sans-serif;
+        color: var(--black);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        @include transition(all);
+        &:hover {
+          color: var(--orange)
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          top: 2px;
+          right: -24px;
+          width: 16px;
+          height: 16px;
+          background-size: contain;
+          background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cellipse cx='8' cy='8' rx='8' ry='8' fill='%23DF5B35'/%3E%3Cpath d='M11.6362 8L-0.000132263 8' stroke='%23F5F3F0'/%3E%3Cpath d='M13.0908 8.00013L8.72718 11.1493L8.72718 4.85095L13.0908 8.00013Z' fill='%23F5F3F0'/%3E%3C/svg%3E%0A");
+        }
+      }
+    }
+  }
+
+  .btn-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+    @include respond-below(xs) {
+      margin-top: 24px;
+    }
+    .btn--wrapper {
+      width: 200px;
+      @include respond-below(xs) {
+        width: 100%;
+      }
+    }
+  }
+}

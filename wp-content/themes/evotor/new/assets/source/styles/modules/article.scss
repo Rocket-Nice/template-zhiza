@@ -1,0 +1,386 @@
+.article {
+  margin-bottom: 50px;
+  position: relative;
+
+  .aside {
+    @include aside-text;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: calc(100% + 132px);
+    width: 320px;
+
+    img {
+      display: block;
+      margin-bottom: 15px;
+      max-width: 100%;
+
+      &.up {
+        position: absolute;
+        bottom: calc(100% + 15px);
+        margin-bottom: 0;
+
+        @media #{$mq-tablet} {
+          position: relative;
+          bottom: auto;
+        }
+
+        @media #{$mq-mobile} {
+          position: relative;
+          bottom: auto;
+        }
+      }
+
+      &.outline {
+        border: 1px solid #dbdbdb;
+      }
+    }
+
+    span {
+      display: block;
+    }
+
+    &__block {
+      margin-bottom: 60px;
+    }
+
+    &__number {
+      display: block;
+      font-family: $sans-500;
+      font-size: 63px;
+      line-height: 74px;
+      white-space: nowrap;
+
+      &.plus {
+        color: $green;
+        position: relative;
+
+        &::before {
+          content: '+';
+          position: absolute;
+          top: 0;
+          left: -40px;
+
+          @media #{$mq-tablet} {
+            position: relative;
+            left: auto;
+          }
+
+          @media #{$mq-mobile} {
+            position: relative;
+            left: auto;
+          }
+        }
+      }
+
+      &.minus {
+        color: #e24c4c;
+        position: relative;
+
+        &::before {
+          content: '-';
+          position: absolute;
+          top: 0;
+          left: -30px;
+
+          @media #{$mq-tablet} {
+            position: relative;
+            left: auto;
+          }
+
+          @media #{$mq-mobile} {
+            position: relative;
+            left: auto;
+          }
+        }
+      }
+    }
+
+    @media #{$mq-tablet-max} {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      top: auto;
+      left: auto;
+      margin: 40px 0;
+      width: 100%;
+
+      img {
+        width: auto;
+        height: 64px;
+        margin-bottom: 0;
+        margin-right: 15px;
+      }
+    }
+
+    &-wrap {
+      @media #{$mq-tablet-max} {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+        top: auto;
+        left: auto;
+        margin: 40px 0;
+        width: 100%;
+        padding-left: 57px;
+        
+        .aside__number {
+          &.minus {
+            margin-left: -47px;
+          }
+          &.plus {
+            margin-left: -57px;
+          }
+        }
+      }
+    }
+  }
+
+  h2 {
+    @include article-content;
+    @include heading;
+    margin-bottom: 30px;
+    margin-top: 60px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  
+  p {
+    @include article-content;
+    @include paragraph;
+    position: relative;
+    margin-bottom: 30px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  
+    strong, b {
+      font-family: $serif-700; 
+    }
+  }
+
+  a {
+    color: $orange;
+
+    &:hover {
+      color: #D07422;
+    }
+  }
+
+  table {
+    margin: 60px 0;
+    text-align: left;
+    font-size: 24px;
+    line-height: 36px;
+    width: 100%;
+    position: relative;
+
+
+    p {
+      max-width: auto;
+      margin-left: 0;
+    }
+
+    strong, b {
+      font-family: $serif-700; 
+    }
+
+    th {
+      font-family: $serif-700;
+      padding-right: 21px;
+  
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+    
+    td {
+      @include paragraph;
+      padding-bottom: 20px;
+      padding-right: 21px;
+      height: 100%;
+      vertical-align: top;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    tr:last-child {
+      td {
+        padding-bottom: 0;
+      }
+    }
+
+
+    &.narrow {
+      @include article-content;
+    }
+
+    &.table-mobile {
+      display: none;
+    }
+
+    @media #{$mq-mobile} {
+      &.table-desktop {
+        display: none;
+      }
+
+      &.table-mobile {
+        display: table;
+      }
+    }
+  }
+
+  figure {
+    width: 100%;
+    margin: 60px 0;
+
+    .content {
+      border-radius: 5px;
+      overflow: hidden;
+      max-height: 640px;
+
+      img {
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    figcaption {
+      @include article-content;
+      @include aside-text;
+      margin-top: 30px;
+      
+      @media #{$mq-tablet} {
+        margin-top: 15px;
+      }
+      
+      @media #{$mq-mobile} {
+        margin-top: 10px;
+      }
+    }
+    
+    &.contain {
+      .content {
+        @include article-content;
+        max-height: 100%;
+        border-radius: 0;
+      }
+
+      img {
+        width: auto;
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: initial;
+
+        @media #{$mq-mobile} {
+          height: auto !important;
+        }
+      }
+
+      figcaption {
+        margin-top: 10px;
+      }
+    }
+
+    &.outline {
+      img {
+        border: 1px solid #dbdbdb;
+      }
+    }
+  }
+
+  .share {
+    @include article-content;
+    margin-top: 100px;
+  }
+
+  .highlight {
+    @include highlight;
+
+    table {
+      width: calc(100% - 60px);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    &.blue {
+      background: rgba(86, 204, 242, 0.14);
+    }
+
+    &.yellow {
+      background: #FCF7D4;
+    }
+
+    * + & {
+      margin-top: 30px;
+    }
+  }
+
+  .cut {
+    @include paragraph;
+    color: $orange;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, #fff 80px, rgba(#fff, 0.0001));
+    padding-top: 200px;
+    cursor: pointer;
+    border: none;
+
+    &:focus,
+    &:hover {
+      outline: none;
+      text-decoration: underline;
+    }
+
+    @media #{$mq-mobile} {
+      background: linear-gradient(to top, #fff 40px, rgba(#fff, 0.0001));
+      padding-top: 140px;
+    }
+  }
+
+  &--collapsed {
+    height: 75vh;
+    overflow: hidden;
+  }
+
+  .multiple-photo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    figure.row {
+      align-content: flex-start;
+      width: 49%;
+
+      figcaption {
+        margin-left: 0;
+      }
+    }
+    @media #{$mq-mobile} {
+      flex-direction: column;
+
+      figure {
+        margin: 20px 0;
+      }
+
+      figure.row {
+        width: 100%;
+      }
+    }
+  }
+
+  .release-date {
+    font-family: $serif-italic;
+    font-size: 24px;
+    line-height: 36px;
+    margin-top: 10px;
+  }
+}

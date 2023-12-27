@@ -1,0 +1,130 @@
+.important-posts {
+  margin-bottom: 56px;
+  padding-top: 56px;
+  @include respond-below(xlg) {
+    padding-top: 40px;
+  }
+  @include respond-below(md) {
+    margin-bottom: 48px;
+  }
+
+  &.no-overflow-x {
+    @include respond-below(mlg) {
+      overflow-x: hidden;
+    }
+  }
+
+  .post-card {
+    background-color: white;
+    .img-wrapper {
+      max-width: 100%;
+      height: 124px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+  }
+
+  // Обнулить верхний паддинг для блока
+  .content-padding {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .posts-list {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 24px;
+    @include respond-below(md) {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    @include respond-below(xs) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &:after {
+      content: '';
+      width: 196px;
+      height: 196px;
+      background-image: url('/wp-content/themes/evotor/images/front-page/important.svg');
+      position: absolute;
+      top: -80px;
+      right: -82px;
+      z-index: -1;
+      animation-name: rotation;
+      animation-duration: 20s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+      background-size: contain;
+      @include respond-below(lg) {
+        width: 120px;
+        height: 120px;
+        top: -46px;
+        right: -40px;
+      }
+      @include respond-below(xs) {
+        right: -30px;
+      }
+    }
+  }
+
+  @keyframes rotation {
+    0% {
+      transform:rotate(360deg);
+    }
+    100% {
+      transform:rotate(0deg);
+    }
+  }
+}
+
+.post-card {
+  height: min-content;
+  bottom: 0;
+  right: 0;
+
+  .post-meta {
+    margin-bottom: 8px;
+  }
+  .text-block {
+    padding: 16px;
+  }
+  .post-title {
+    font-family: "Graphik Semibold", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+    text-decoration: underline 1px rgba(255, 255, 255, 0);
+    transition: text-decoration-color 300ms;
+    text-underline-offset: 5px;
+  }
+}
+
+.post-card--wrapper {
+  &__white {
+    border: 1px solid transparent;
+    height: fit-content;
+    @include transition(all);
+    &:hover, &:active, &:focus {
+      border: 1px solid white;
+
+      .post-card {
+        bottom: 6px;
+        right: 6px;
+        .post-title {
+          text-decoration-color: black;
+        }
+      }
+    }
+    .post-card {
+      position: relative;
+      @include transition(all);
+    }
+  }
+}

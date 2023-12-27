@@ -1,0 +1,50 @@
+.running-line {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  padding: 32px 0 40px 0;
+  background-color: white;
+  @include respond-below(xlg) {
+    padding: 40px 0 16px 0;
+  }
+
+  .line {
+    display: flex;
+    align-items: center;
+    animation: marquee 20s linear infinite;
+
+    span {
+      position: relative;
+      font-size: 40px;
+      line-height: 56px;
+      font-weight: 700;
+      font-family: Kazimir-Bold, sans-serif;
+      color: var(--orange);
+      @include respond-below(xlg) {
+        font-size: 24px;
+        line-height: 30px;
+      }
+    }
+
+    .dot {
+      margin: 0 8px;
+      width: 11px;
+      height: 11px;
+      background-color: var(--orange);
+      border-radius: 100px;
+      @include respond-below(xlg) {
+        width: 6px;
+        height: 6px;
+      }
+    }
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

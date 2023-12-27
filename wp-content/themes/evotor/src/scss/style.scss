@@ -1,0 +1,307 @@
+@charset "UTF-8";
+
+// Media query mixins
+@import "basic/variables";
+@import "basic/mixins";
+
+@import "vendor/likely"; // Стили для блока шэринга статей
+@import "basic/fonts";
+@import "vendor/owl.carousel";
+@import "vendor/jquery.fancybox";
+@import "basic/common";
+@import "basic/responsive";
+@import "basic/category";
+@import "basic/collections";
+@import "basic/collections_all";
+
+// Подписка\отписка
+@import "sub-unsubscribe";
+@import "not-found";
+@import "subscribe-modal";
+@import "components/youtube-placeholder";
+@import "cookie_banner";
+
+@import "components/new-float-menu";
+
+// Новый footer
+@import "components/footer";
+@import "components/sitemap";
+
+//
+.new-wrapper {
+  max-width: 1032px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.bg--gray {
+  background-color: $background_color;
+}
+
+#commentform .g-recaptcha {
+  display: none;
+}
+
+@import "components/amp-sidebar";
+
+.post_main_desc {
+  h6 {
+    margin-bottom: 20px;
+  }
+}
+
+.zoom-image {
+  display: block;
+  position: relative;
+  cursor: zoom-in;
+
+  &:before {
+    content: '';
+    position: absolute;
+    background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 129 129' xmlns:xlink='http://www.w3.org/1999/xlink' enable-background='new 0 0 129 129'%3E%3Cg%3E%3Cg%3E%3Cpath fill='white' d='M51.6,96.7c11,0,21-3.9,28.8-10.5l35,35c0.8,0.8,1.8,1.2,2.9,1.2c1,0,2.1-0.4,2.9-1.2c1.6-1.6,1.6-4.2,0-5.8l-35-35 c6.5-7.8,10.5-17.9,10.5-28.8c0-24.9-20.2-45.1-45.1-45.1C26.8,6.5,6.5,26.8,6.5,51.6C6.5,76.5,26.8,96.7,51.6,96.7z M51.6,14.7 c20.4,0,36.9,16.6,36.9,36.9C88.5,72,72,88.5,51.6,88.5c-20.4,0-36.9-16.6-36.9-36.9C14.7,31.3,31.3,14.7,51.6,14.7z'/%3E%3Cpath fill='white' d='m47.5,78.3c0,2.3 1.8,4.1 4.1,4.1 2.3,0 4.1-1.8 4.1-4.1v-22.6h22.6c2.3,0 4.1-1.8 4.1-4.1s-1.8-4.1-4.1-4.1h-22.6v-22.6c0-2.3-1.8-4.1-4.1-4.1-2.3,0-4.1,1.8-4.1,4.1v22.6h-22.6c-2.3,0-4.1,1.8-4.1,4.1s1.8,4.1 4.1,4.1h22.6v22.6z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E%0A");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 30px;
+    height: 30px;
+    bottom: 0;
+    left: 0;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, .5);
+
+    @include respond-below(lg) {
+      background-size: 14px 14px;
+      width: 20px;
+      height: 20px;
+      bottom: 4px;
+    }
+  }
+}
+
+@import "components/breadcrumbs";
+
+.project-description-on-main-page {
+  padding-top: 72px;
+  background-color: white;
+  margin-bottom: 22px;
+
+  @include respond-below(lg) {
+    padding-top: 56px;
+    margin-bottom: 16px;
+  }
+
+  .project-description-wrapper {
+    display: flex;
+    padding: 24px 160px;
+
+    @include respond-below(lg) {
+      flex-direction: column;
+      padding: 16px 20px;
+    }
+
+    h1 {
+      font-weight: 700;
+      margin-right: 16px;
+      font-size: 20px;
+      line-height: 26px;
+
+      @include respond-below(lg) {
+        margin-bottom: 8px;
+      }
+    }
+
+    p {
+      font-family: 'Graphik Regular', sans-serif;
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+    }
+  }
+}
+
+// На проде пропадают стрелки, хотя локально и на тесте без этого все работает.
+#n_tests .owl-nav {
+  display: block !important;
+}
+
+
+/**
+Пагинация на странице категорий
+ */
+.paginator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 24px;
+
+  .next-arrow {
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='20' viewBox='0 0 10 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.25 0.999999L8.75 10L1.25 19' stroke='%23262626' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-size: 18px 18px;
+  }
+
+  .back-arrow {
+    padding: 0;
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='20' viewBox='0 0 10 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.75 0.999999L1.25 10L8.75 19' stroke='%23262626' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    background-size: 18px 18px;
+  }
+
+  .page-numbers {
+    display: flex;
+    font-family: Graphik Regular, sans-serif;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 22px;
+    color: black;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border: 2px solid transparent;
+    border-radius: 100px;
+    @include transition(all);
+
+    &:not(.prev):not(.next) {
+      margin: 0 2px;
+
+      &:hover {
+        border-color: $orange;
+      }
+    }
+
+    &.prev,
+    &.next {
+      display: flex;
+      align-items: center;
+      padding: 0;
+      width: 24px;
+      height: 24px;
+      justify-content: center;
+    }
+  }
+
+
+  > :first-child:not(.prev) {
+    margin-left: 24px !important;
+  }
+
+  .current {
+    border: 2px solid $orange;
+    border-radius: 100px;
+  }
+}
+
+.to_top {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  bottom: 64px;
+  right: 64px;
+  background-color: rgba(50, 0, 131, 0.8);
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(90deg);
+  cursor: pointer;
+  visibility: visible;
+  opacity: 1;
+  z-index: 100;
+  @include transition(all);
+
+  @include respond-below(xlg) {
+    width: 40px;
+    height: 40px;
+    right: 8px;
+    border-radius: 40px;
+  }
+
+  img {
+    width: 17px;
+    height: 23px;
+
+    @include respond-below(xlg) {
+      width: 15px;
+      height: 20px;
+    }
+  }
+
+  &.disabled {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+
+.post_main_bn3 {
+  .ads-info {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 11px !important;
+    line-height: 3px;
+    color: #727272;
+    font-family: Graphik Regular, sans-serif;
+    margin-top: 16px;
+
+    .square {
+      display: inline-block;
+      margin: 0 4px;
+      width: 4px;
+      height: 4px;
+      color: #DF5B35;
+      background-color: #DF5B35;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.post_main_bn2 .desc,
+.post_main_bn {
+  .ads-info {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 11px !important;
+    line-height: 3px;
+    color: #727272;
+    font-family: Graphik Regular, sans-serif;
+    margin-top: 16px;
+
+    .square {
+      display: inline-block;
+      margin: 0 4px;
+      width: 4px;
+      height: 4px;
+      color: #DF5B35;
+      background-color: #DF5B35;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.color_bn .box .info_block {
+  .ads-info {
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: 11px !important;
+    line-height: 3px;
+    color: white;
+    font-family: Graphik Regular, sans-serif;
+    margin-top: 16px;
+
+    .square {
+      display: inline-block;
+      margin: 0 4px;
+      width: 4px;
+      height: 4px;
+      color: var(--black);
+      background-color: var(--black);
+      transform: rotate(-45deg);
+    }
+  }
+}

@@ -1,0 +1,92 @@
+.post__image-preview {
+  width: 100%;
+}
+
+
+.text-info {
+  &__wrapper {
+    margin-top: 40px;
+    margin-bottom: 56px;
+    @include respond-below(md) {
+      margin-top: 32px;
+    }
+    @include respond-below(xs) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__meta {
+    justify-content: center;
+  }
+
+  &__h1 {
+    font-family: "Kazimir Bold", sans-serif;
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 16px;
+    @include respond-below(md) {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  &__short-description {
+    text-align: center;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 400;
+    margin-bottom: 16px;
+
+    a {
+      color: var(--orange);
+    }
+  }
+
+  &__post-authors {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 0;
+
+    @include respond-below(mdxs) {
+      gap: 8px 22px;
+    }
+
+    li {
+      position: relative;
+      font-size: 12px;
+      line-height: 16px;
+
+      &:not(:last-child) {
+        margin-right: 22px;
+
+        @include respond-above(lg) {
+          &:after {
+            position: absolute;
+            content: "";
+            right: -13px;
+            top: 7px;
+            width: 4px;
+            height: 4px;
+            background-color: var(--orange);
+            transform: rotate(45deg);
+          }
+        }
+
+        @include respond-below(mdxs) {
+          margin-right: unset;
+        }
+      }
+      a {
+        color: var(--orange);
+        font-size: 12px;
+        line-height: 16px;
+        font-family: "Graphik Semibold", sans-serif;
+        font-weight: 600;
+      }
+    }
+  }
+}

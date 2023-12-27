@@ -1,0 +1,111 @@
+.found-results {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.bottom-offset {
+  margin-bottom: 56px;
+  @include respond-below(xs) {
+    margin-bottom: 42px;
+  }
+}
+
+.paginator {
+  margin: 32px 0 56px 0;
+  @include respond-below(xs) {
+    margin-bottom: 42px;
+  }
+}
+
+.search-result-item {
+  display: grid;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--grayDarker);
+  grid-template-areas: 'image text';
+  grid-template-columns: 239px 1fr;
+  gap: 0 24px;
+  @include respond-below(md) {
+    grid-template-columns: 168px 1fr;
+    gap: 0 16px;
+  }
+  @include respond-below(xs) {
+    grid-template-areas: 'image' 'text';
+    grid-template-columns: 1fr;
+    gap: 16px 0;
+  }
+
+  .img {
+    display: block;
+    width: 239px;
+    min-height: 140px;
+    grid-area: image;
+    @include respond-below(md) {
+      height: 100px;
+      width: 168px;
+      min-height: initial;
+    }
+    @include respond-below(xs) {
+      height: 146px;
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      background-color: var(--grayDarker);
+    }
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    grid-area: text;
+  }
+
+  .post-title {
+    font-family: Kazimir-Bold, sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 26px;
+    color: black;
+    margin-bottom: 16px;
+    @include respond-below(md) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    @include respond-below(xs) {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  .excerpt {
+    font-size: 16px;
+    line-height: 22px;
+    color: #000;
+    margin-bottom: 16px;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+    .category {
+      font-family: "Graphik Semibold", sans-serif;
+      color: var(--orange);
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+    }
+    .date {
+      font-size: 12px;
+      line-height: 16px;
+      color: var(--grayLighter);
+      padding-bottom: 2px;
+    }
+  }
+
+  .founded {
+    color: var(--orange);
+  }
+}

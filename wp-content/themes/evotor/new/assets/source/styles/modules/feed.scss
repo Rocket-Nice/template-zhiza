@@ -1,0 +1,96 @@
+.feed {
+  .level {
+    @include highlight;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 40px -20px 20px;
+    position: relative;
+
+    @media #{$mq-mobile} {
+      margin-left: -10px;
+      margin-right: -9px;
+    }
+
+    h1 {
+      @include heading;
+      margin-bottom: 40px;
+    }
+
+    &::before {
+      max-width: 100%;
+      margin-left: 0;
+      margin-bottom: 6px;
+    }
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    .row {
+      margin: 0;
+    }
+
+    h1, &::before {
+      padding: 0 10.5px;
+    }
+
+
+    .close {
+      background: transparent url('../img/cross.svg') no-repeat center;
+      background-size: 18px auto;
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 18px;
+      height: 18px;
+      border: none;
+      cursor: pointer;
+    }
+
+
+
+    &--dark {
+      background-color: #292929;
+      background-image: url('../img/star.svg'), url('../img/star.svg'), url('../img/star.svg'), url('../img/star.svg');
+      background-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+      background-position: 54px 35%, 400px 150%, 750px 270%, 1100px 390%;
+      margin-bottom: 40px;
+
+      &::before {
+        color: rgba(#fff, 0.5) !important;
+      }
+
+      h1, h2, p {
+        color: #fff !important;
+      }
+
+      .news-card a {
+        color: #FF9638;
+
+        &:hover {
+          color: #D07422;
+        }
+      }
+    }
+  }
+
+  &__button {
+    border-radius: 5px;
+    border: 1px solid $orange;
+    color: $orange;
+    display: inline-block;
+    font-family: $serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 36px;
+    margin: 40px auto 50px;
+    padding: 15px 41px;
+
+    &:hover {
+      color:darken($orange, 15%);
+      border-color:darken($orange, 15%);;
+    }
+
+  }
+}

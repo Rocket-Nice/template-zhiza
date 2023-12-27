@@ -1,0 +1,28 @@
+/* Переменные */
+$helvetica: "Helvetica Neue", Arial, sans-serif;
+
+$sans-500: "museo-medium", sans-serif;
+$sans-700: "museo-bold", sans-serif;
+$serif: "alegreya", serif;
+$serif-700: "alegreya-bold", serif;
+$serif-italic: "alegreya-italic", serif;
+
+$link: #0000ff;
+$link-hover: #ff0000;
+
+$orange: #FF9638;
+$green: #219653;
+
+$mq-mobile: "(max-width: 765px)";
+$mq-tablet: "(min-width: 768px) and (max-width: 1280px)";
+$mq-laptop: "(min-width: 1281px) and (max-width: 1390px)";
+$mq-desktop: "(min-width: 1391px)";
+
+$mq-tablet-max: "(max-width: 1280px)";
+$mq-laptop-min: "(min-width: 1281px)";
+
+@media #{$mq-mobile} {
+  p {
+    font-size: 12px;
+  }
+}

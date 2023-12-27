@@ -1,0 +1,71 @@
+.front-page-subscribe-form {
+  background-color: var(--black);
+
+  .new_sub {
+    overflow: initial;
+    @include respond-below(mmlg) {
+      overflow: hidden;
+    }
+    @include respond-below(xs) {
+      min-height: 486px;
+      background-image: url('/wp-content/themes/evotor/images/front-page/cut_letter.svg');
+      background-size: 384px 72px;
+      background-position: center bottom;
+      background-repeat: no-repeat;
+      @include respond-below(xs) {
+        min-height: 384px;
+      }
+      @include respond-below-specified(560px) {
+        min-height: 432px;
+      }
+      @include respond-below-specified(500px) {
+        min-height: 441px;
+      }
+      @include respond-below-specified(427px) {
+        min-height: 441px;
+      }
+      //@include respond-below-specified(417px) {
+      //
+      //}
+      @include respond-below-specified(396px) {
+        min-height: 463px;
+      }
+      //@include respond-below-specified(393px) {
+      //
+      //}
+      //@include respond-below-specified(377px) {
+      //
+      //}
+      //@include respond-below-specified(362px) {
+      //
+      //}
+      @include respond-below-specified(322px) {
+        min-height: 490px;
+      }
+    }
+
+    .wrapper {
+      padding: 32px 0;
+      background-color: initial;
+      @include respond-below(xs) {
+        padding: 24px 0;
+      }
+    }
+
+    &--padding {
+      @include respond-below(xlg) {
+        padding: 0 16px;
+      }
+    }
+
+    .big-letter {
+      right: -72px;
+      @include respond-below(md) {
+        right: -200px;
+      }
+      @include respond-below(xs) {
+        display: none;
+      }
+    }
+  }
+}

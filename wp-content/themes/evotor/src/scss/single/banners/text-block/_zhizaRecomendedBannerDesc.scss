@@ -1,0 +1,103 @@
+.zhizaRecommendedBannerDesc {
+  position: relative;
+  display: flex;
+  background-color: var(--yellow);
+  border-radius: 4px;
+  margin-top: 40px;
+  flex-direction: row;
+  padding: 40px 24px 24px;
+
+  &.orange-class-block {
+    background-color: var(--orange);
+
+    .text {
+      color: white;
+    }
+
+    .ads-info.gray-v{
+      color: white;
+    }
+
+    .square {
+      background-color: gray !important;
+    }
+  }
+
+  @include respond-below(xs) {
+    flex-direction: column;
+  }
+
+  .info-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .text {
+    font-family: Kazimir-Bold, sans-serif;
+      font-size: 24px;
+      line-height: 30px;
+      font-weight: 700;
+    color: var(--black);
+
+    @include respond-below(mdxs) {
+      font-size: 21px;
+    }
+  }
+
+  .subscribe-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 16px;
+    border: 1px solid var(--black);
+
+    font-family: Graphik Bold, sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: var(--black);
+    padding: 10px 0;
+    @include respond-below(md) {
+      display: none;
+    }
+  }
+
+  .img {
+    position: absolute;
+    left: 24px;
+    top: -32px;
+
+    @media (min-width: 992px) {
+      width: 324px;
+      height: 54px;
+
+      img {
+        width: 324px;
+      }
+    }
+  }
+
+  .circle {
+    width: 96px;
+    height: 96px;
+    display: block;
+    margin-right: 24px;
+    border-radius: 100px;
+    object-fit: cover;
+    @include respond-below(xs) {
+      margin-bottom: 16px;
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  .new-ad.ads-info {
+    margin-top: 8px;
+
+    .square {
+      margin: 0px 4px 0;
+    }
+  }
+}

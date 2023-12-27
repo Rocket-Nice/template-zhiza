@@ -1,0 +1,243 @@
+.header {
+  font-size: 20px;
+  color: #000;
+  padding: 40px 0;
+
+  @media #{$mq-tablet} {
+    padding: 25px 0;
+  }
+
+  @media #{$mq-mobile} {
+    padding: 25px 0;
+  }
+
+  nav {
+    text-align: right;
+
+    @media #{$mq-tablet} {
+      text-align: left;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    @media #{$mq-mobile} {
+      display: none;
+      position: absolute;
+      top: 74px;
+      left: 0;
+      height: calc(100vh);
+      width: 100%;
+      background: #fff;
+      flex-direction: column;
+      align-items: stretch;
+      z-index: 100;
+      border-top: 1px solid #eee;
+      padding-top: 25px;
+
+      a {
+        margin-bottom: 25px;
+        text-align: left;
+        padding-left: 20px;
+      }
+      
+      &.active {
+        display: flex;
+      }
+    }
+  }
+  
+  a {
+    color: #FF9638;
+    text-decoration: none;
+    font-family: $serif;
+    font-size: 24px;
+    line-height: 36px;
+
+    @media #{$mq-tablet} {
+      display: inline-block;
+      text-align: center;
+      margin-top: 15px;
+    }
+    
+    & {
+      @media #{$mq-laptop} {
+        margin-right: 5px !important;
+        font-size: 19px;
+      }
+    }
+
+    &:not(:last-child) {
+      margin-right: 10px;
+      
+      @media #{$mq-tablet} {
+        margin-right: 10px;
+      }
+    }
+
+    &:hover {
+      color: #D07422;
+    }
+
+    &.active {
+      border: 1px solid $orange;
+      border-radius: 5px;
+      padding: 3px 10px 5px;
+    }
+  }
+
+  .logo {
+    @media #{$mq-tablet} {
+      text-align: center;
+    }
+
+    > a {
+      font-weight: 700;
+      font-size: 40px;
+      line-Height: 47px;
+      text-transform: uppercase;
+      font-family: $sans-700;
+      color: #000;
+      margin-right: 0;
+
+      @media #{$mq-laptop} {
+        font-weight: 700;
+        font-size: 40px;
+        line-Height: 47px;
+        text-transform: uppercase;
+        font-family: $sans-700;
+        color: #000;
+        margin-right: 0;
+      }
+  
+      @media #{$mq-tablet} {
+        font-family: $sans-700;
+        margin-right: 0;
+      }
+  
+      @media #{$mq-mobile} {
+        font-family: $sans-700;
+        margin-right: 0;
+        font-size: 32px;
+      }
+    }
+
+    sup {
+      position: relative;
+      top: -21px;
+      left: -7px;
+
+      @media #{$mq-mobile} {
+        top: -16px;
+      }
+    }
+
+    sup, sup > a {
+      text-transform: none;
+      font-family: $serif-italic;
+      font-weight: normal;
+      line-height: 26px;
+      font-size: 24px;
+
+      @media #{$mq-mobile} {
+        font-size: 20px;
+      }
+    }
+  }
+
+  a.logo {
+    color: #000;
+  }
+
+  .burger {
+    border: none;
+    background: transparent url('../img/burger.svg') no-repeat right center;
+    background-size: 18px auto;
+    width: 48px;
+    height: 24px;
+    display: none;
+    margin-left: auto;
+
+    &:focus {
+      outline: none;        
+    }
+
+    &.active {
+      background: transparent url('../img/cross_black.svg') no-repeat right center;
+    }
+
+    @media #{$mq-mobile} {
+      display: block;
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  &__image {
+    margin: 40px auto 0 auto;
+    max-width: 100%;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
+
+    @media #{$mq-mobile} {
+      // height: 210px;
+      margin: 20px auto;
+    }
+  }
+
+  &--colored {
+    // background-color: #FC6295;
+    position: relative;
+    box-sizing: border-box;
+    padding-bottom: 0;
+    
+    a {
+      color: #000;
+
+      &:hover {
+        color: #000;
+      }
+
+      &.active {
+        border: 1px solid #000;
+      }
+    }
+  }
+
+  &__title {
+    @include article-title;
+    width: 100%;
+    padding: 55px 110px 60px;
+
+    @media #{$mq-mobile} {
+      padding: 20px 30px 30px;
+    }
+
+    @media #{$mq-laptop-min} {
+      position: sticky;
+      bottom: 0;
+    }
+
+    &-gradient {
+      display: none;
+      position: absolute;
+      top: -20%;
+      left: 0;
+      height: 100px;
+      width: 100%;
+      content: '';
+    }
+
+    &--colored {
+      // background-color: #FC6295;
+
+      .header__title-gradient {
+        display: block;
+        // background-image: linear-gradient(to top, #FC6295, #FC6295 0%, rgba(#FC6295, 0) 100%);      
+      }
+    }
+  }
+}

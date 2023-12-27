@@ -1,0 +1,296 @@
+.box {
+  .basic {
+    word-wrap: break-word;
+    max-width: 768px;
+    width: 100%;
+
+    @include respond-below(xlg) {
+      max-width: 714px;
+    }
+
+    @include respond-below(md) {
+      max-width: unset;
+      grid-area: basic;
+    }
+  }
+
+  .banner {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 240px;
+    width: 100%;
+    z-index: 5;
+
+    @include respond-below(xlg) {
+      max-width: 222px;
+    }
+
+    @include respond-below(md) {
+      position: unset;
+      max-width: unset;
+      grid-area: banner;
+      margin-top: 16px;
+    }
+
+    strong, span, b {
+      font-weight: 600;
+    }
+  }
+}
+
+.short-container {
+  @include respond-below(xlg) {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0 24px;
+    grid-template-areas:
+      "basic"
+      "banner";
+  }
+
+  &.restyle-for-banner {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    gap: 0 24px;
+    grid-template-areas:
+      "basic"
+      "banner";
+  }
+}
+
+.wide-container {
+
+}
+
+.default-text {
+  font-family: Graphik Regular, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 22px;
+
+  a {
+    color: var(--orange);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+
+  span, strong {
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: unset;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  ul, ol {
+    padding-left: 19px;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+.gray-block-bg {
+  background-color: #ECEBE9;
+  border-radius: 4px;
+  border: 1px solid var(--grayDarker);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 24px;
+
+  .ads-info {
+    margin-top: unset !important;
+  }
+}
+
+.orange-block-bg {
+  display: flex;
+  gap: 24px;
+
+  .ads-info {
+    margin-top: unset !important;
+  }
+
+  div {
+    &:nth-child(1) {
+      width: 4px;
+      background-color: var(--orange);
+      flex-shrink: 0;
+      border-radius: 4px;
+    }
+
+    &:nth-child(2) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+  }
+}
+
+h2 {
+  font-size: 32px;
+  font-family: Kazimir-Bold, sans-serif;
+  font-weight: 700;
+  line-height: 38px;
+
+  @include respond-below(md) {
+    font-size: 24px;
+    line-height: 30px;
+  }
+}
+
+h3 {
+  font-size: 24px;
+  font-family: Kazimir-Bold, sans-serif;
+  font-weight: 700;
+  line-height: 30px;
+
+  @include respond-below(md) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.common-text .basic {
+  > p {
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
+  }
+
+  h2, h3 {
+    margin-bottom: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  blockquote {
+    position: relative;
+    background-color: #ECEBE9;
+    border-radius: 4px;
+    padding: 40px 24px;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      background-image: url('/wp-content/themes/evotor/assets/images/blockquote.svg');
+      background-size: contain;
+      width: 72px;
+      height: 72px;
+      top: -36px;
+      left: -16px;
+      @include respond-below(xs) {
+        left: 0;
+      }
+    }
+
+    strong {
+      font-family: 'Kazimir Bold', sans-serif;
+      font-weight: 700;
+      font-size: 28px;
+      line-height: 34px;
+      @include respond-below(md) {
+        font-size: 20px;
+        line-height: 26px;
+      }
+    }
+
+    p {
+      font-family: 'Graphik Regular', sans-serif;
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 400;
+
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      &:has(small) {
+        // Т.к. нет нормальной возможности изменить отступ у параграфа, если в следующем за ним
+        // идет параграф с тегом small, то просто для P с тегом small делаю отрицательный отступ.
+        margin-top: -16px;
+      }
+    }
+
+    small {
+      font-family: 'Graphik Regular', sans-serif;
+      font-size: 12px;
+      color: var(--grayLighter);
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+}
+
+.new-ad.ads-info {
+  display: flex;
+  align-items: center;
+  font-weight: 400;
+  flex-wrap: wrap;
+  font-size: 12px;
+  line-height: 16px;
+  color: white;
+  font-family: Graphik Regular, sans-serif;
+  margin-top: 16px;
+
+  .square {
+    display: inline-block;
+    margin: 3px 4px 0;
+    width: 4px;
+    height: 4px;
+    color: #DF5B35;
+    background-color: #DF5B35;
+    transform: rotate(-45deg);
+  }
+
+  &.gray-v {
+    color: #727272;
+
+    .square {
+      color: #727272;
+    }
+  }
+}
+
+.mt-0 {
+  margin-top: 0 !important;
+}
+
+.new_sub {
+  @include respond-below(md) {
+    padding: 0 24px;
+  }
+  @include respond-below(xs) {
+    padding: 0 16px;
+  }
+}
+
+.p-t-md-0 {
+  @include respond-below(md) {
+    padding-top: 0 !important;
+  }
+}
+
+.p-b-md-0 {
+  @include respond-below(md) {
+    padding-bottom: 0 !important;
+  }
+}
+
+.form-subscribe--bottom-offset {
+  margin-bottom: 56px;
+  @include respond-below(xs) {
+    margin-bottom: 40px;
+  }
+}

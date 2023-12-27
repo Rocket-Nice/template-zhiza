@@ -1,0 +1,203 @@
+@import "../basic/mixins";
+
+.page-about {
+  .about--container {
+    gap: 0 75px;
+
+    .content {
+      p {
+        margin-bottom: 24px;
+        @include respond-below(md) {
+          margin-bottom: 20px;
+        }
+        @include respond-below(xs) {
+          margin-bottom: 16px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+
+  .short--container {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    @include respond-below(sm) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .ads--info {
+    background-color: white;
+    padding: 24px;
+    height: max-content;
+    position: relative;
+    background-image: url('/wp-content/themes/evotor/assets/images/zhiza_letter_gray_pc.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    @include respond-below(sm) {
+      max-width: 240px;
+      width: 100%;
+      margin-top: 32px;
+    }
+    @include respond-below(xs) {
+      margin-top: 16px;
+      max-width: initial;
+      width: 100%;
+    }
+
+    .info {
+      &:not(:last-child) {
+        margin-bottom: 19px;
+      }
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      margin-top: 5px;
+      &.combined--link a {
+        margin-left: 4px;
+      }
+    }
+
+    a {
+      display: block;
+      margin-top: 3px;
+    }
+  }
+
+  a {
+    color: $lightBlue;
+    font-family: inherit;
+    @include transition(all);
+
+    &:hover, &:active, &:focus {
+      text-underline-offset: 4px;
+      text-decoration: underline;
+    }
+  }
+
+  strong, b {
+    font-family: 'Graphik Semibold', sans-serif;
+
+    &.big {
+      font-size: 18px;
+      line-height: 26px;
+      @include respond-below(xs) {
+        font-size: 16px;
+        line-height: 22px;
+      }
+    }
+  }
+
+  .redaction {
+    p {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  .team {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    @include respond-below(xlg) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include respond-below(sm) {
+      grid-template-columns: 1fr;
+      gap: 16px 0;
+    }
+
+    li {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 0 24px;
+
+      img {
+        border-radius: 100px;
+        background-color: $grayAnother;
+      }
+    }
+  }
+
+  .name-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      color: black;
+      @include transition(all);
+
+      &:hover {
+        color: $orange;
+      }
+    }
+    strong {
+      font-family: 'Graphik Semibold', sans-serif;
+      margin-bottom: 4px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  .together-with-us {
+    .owl-stage {
+      padding-left: 0 !important;
+    }
+    .sliderItem {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr 1fr;
+      gap: 16px 24px;
+      grid-auto-flow: column;
+      @include respond-below(xlg) {
+        gap: 16px;
+      }
+      @include respond-below(xs) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+      }
+
+      .name-block {
+        max-width: 250px;
+        width: 100%;
+        justify-content: initial;
+      }
+    }
+  }
+
+  .content {
+    p {
+      font-size: 16px;
+      line-height: 22px;
+      &:not(:last-child) {
+        margin-bottom: 10px;
+        @include respond-below(xs) {
+          margin-bottom: 14px;
+        }
+      }
+      &.short-padding {
+        margin-bottom: 10px;
+      }
+      &.large-padding {
+        margin-bottom: 24px;
+        @include respond-below(sm) {
+          margin-bottom: 16px;
+        }
+      }
+    }
+    a {
+      font-family: 'Graphik Semibold', sans-serif;
+    }
+  }
+}

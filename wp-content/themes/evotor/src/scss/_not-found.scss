@@ -1,0 +1,94 @@
+.not_found {
+  height: calc(100vh - 168px);
+  background-image: url('/wp-content/themes/evotor/images/404.svg');
+  background-repeat: no-repeat;
+  background-position-y: 74px;
+
+  @include respond-below(lg) {
+    height: calc(100vh - -190px);
+    background-position: center bottom -200px;
+    background-image: url('/wp-content/themes/evotor/images/404_mobile.svg');
+  }
+  @include respond-below(md) {
+    background-position: center bottom;
+  }
+  @include respond-below(sm) {
+    //background-size: contain;
+    height: calc(100vh - 30px);
+  }
+
+  .wrapper, .message-wrapper, .message {
+    @include respond-below(lg) {
+      height: 100%;
+    }
+  }
+
+  .message-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .message {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    margin-top: 123px;
+
+    @include respond-below(lg) {
+      margin-top: 0;
+    }
+
+    svg {
+      @include respond-below(lg) {
+        align-self: center;
+        width: 177px;
+        height: 120px;
+      }
+    }
+
+    p {
+      font-family: 'Graphik Regular', sans-serif;
+      font-weight: normal;
+      margin-top: 16px;
+      font-size: 16px;
+      line-height: 22px;
+      text-align: center;
+      margin-bottom: 30px;
+      @include respond-below(lg) {
+        margin: 0;
+        flex: 1 0
+      }
+    }
+
+    a {
+      display: block;
+
+      @include respond-above(lg) {
+        width: max-content;
+        align-self: center;
+      }
+
+      .btn {
+        font-family: 'Graphik Bold', sans-serif;
+        color: white;
+        font-size: 18px;
+        font-weight: 600;
+        text-align: center;
+        padding: 16px 40.5px;
+        text-decoration: none;
+        background-color: #242121;
+        transition: all 0.3s ease;
+        border: 1px solid #242121;
+
+        @include respond-below(lg) {
+          margin-bottom: 32px;
+        }
+
+        &:hover {
+          color: #242121;
+          background-color: #F5F3F0;
+        }
+      }
+    }
+  }
+}

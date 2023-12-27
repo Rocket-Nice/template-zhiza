@@ -1,0 +1,492 @@
+#modal_subs {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 !important;
+
+  .banner-n {
+    margin-bottom: 0 !important;
+    width: 100%;
+    left: 0;
+    margin-left: 0;
+  }
+
+  &.short {
+    @include respond-below(lg) {
+      max-width: 335px;
+    }
+  }
+}
+
+#n_sub.modal {
+  margin-top: 0;
+  background-color: #DF5B35;
+}
+
+#modal_subs .fancybox-button svg {
+  color: #fff;
+}
+
+.new_sub--padding {
+  @include respond-below(lg) {
+    padding: 0 16px;
+  }
+}
+
+.new_sub {
+  position: relative;
+  overflow: hidden;
+
+  .no-overflow {
+    overflow: hidden;
+  }
+
+  @include respond-below(xs) {
+    padding: 0 16px;
+  }
+
+
+
+  &--white {
+    --svgHoverColor: #{$black};
+    @include respond-below(xs) {
+      --policyColor: #{$gray};
+    }
+  }
+  &--orange {
+    --modalBgColor: #{$orange};
+    --svgColor: #{$black};
+    --svgHoverColor: #{$orange};
+    --letterColor: #{$black};
+    --titleColor: white;
+    --textColor: white;
+    --policyColor: white;
+    --policyHoverColor: #{$black};
+    --btnColor: #{$black};
+    --successText: white;
+    --successImageColor: white;
+    --errorColor: white;
+    @include respond-below(md) {
+      --letterColor: white;
+      --errorColor: #{$black};
+    }
+    @include respond-below(xs) {
+      --policyColor: black;
+    }
+  }
+  &--black {
+    --modalBgColor: #{$black};
+    --titleColor: #{$orange};
+    --textColor: white;
+    --policyColor: white;
+    --successText: white;
+    --successImageColor: white;
+    @include respond-below(xs) {
+      --policyColor: #{$gray};
+      --errorColor: #{$gray};
+    }
+  }
+
+
+
+  .wrapper {
+    padding: 32px 24px 32px 32px;
+    background-color: var(--modalBgColor);
+    @include respond-below(sm) {
+      padding: 16px;
+    }
+  }
+
+  .text--container {
+    position: relative;
+    z-index: 10;
+  }
+
+  .subscribe {
+    &--title {
+      font-family: "Kazimir Bold", sans-serif;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 26px;
+      margin-bottom: 8px;
+      color: var(--titleColor);
+      @include respond-below(md) {
+        max-width: 480px;
+      }
+      @include respond-below(sm) {
+        text-align: center;
+        font-size: 18px;
+        line-height: 26px;
+        max-width: initial;
+      }
+    }
+    &--description {
+      font-family: 'Graphik Regular', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 22px;
+      max-width: 630px;
+      margin-bottom: 16px;
+      color: var(--textColor);
+      @include respond-below(md) {
+        max-width: 480px;
+        margin-bottom: 8px;
+      }
+      @include respond-below(sm) {
+        text-align: center;
+        margin-bottom: 16px;
+        max-width: initial;
+      }
+    }
+    &--form {
+      display: flex;
+      flex-direction: column;
+
+      .form--row {
+        display: flex;
+        margin-bottom: 8px;
+        @include respond-below(sm) {
+          flex-direction: column;
+          margin-bottom: 16px;
+        }
+        a {
+          display: block;
+        }
+      }
+
+      .form {
+        max-width: 472px;
+        width: 100%;
+        margin-right: 24px;
+        @include respond-below(sm) {
+          margin-right: 0;
+          max-width: initial;
+        }
+      }
+
+      .error {
+        margin-top: 9px;
+        display: flex;
+        color: var(--errorColor);
+        max-width: 472px;
+        @include respond-below(sm) {
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          max-width: initial;
+          margin-bottom: 16px;
+        }
+        .txt {
+          font-family: 'Graphik Regular', sans-serif;
+          display: flex;
+          flex-wrap: wrap;
+          font-size: 12px;
+          line-height: 16px;
+          text-align: center;
+          @include respond-below(sm) {
+            justify-content: center;
+          }
+        }
+        svg {
+          flex-shrink: 0;
+          margin-right: 5px;
+          fill: var(--errorColor);
+        }
+        a {
+          display: block;
+          text-decoration: underline;
+          text-underline-offset: 2px;
+          @include transition(all);
+          color: var(--errorColor);
+          &:hover, &:focus, &:active {
+            color: var(--policyHoverColor);
+          }
+        }
+      }
+
+      .form--container {
+        display: flex;
+        max-width: 472px;
+        width: 100%;
+        @include respond-below(md) {
+          margin-right: 16px;
+        }
+        @include respond-below(sm) {
+          flex-direction: column;
+          margin-bottom: 16px;
+          max-width: initial;
+        }
+
+        input[type="email"] {
+          box-sizing: border-box;
+          display: block;
+          font-family: 'Graphik Regular', sans-serif;
+          font-size: 16px;
+          line-height: 22px;
+          margin-right: 24px;
+          max-width: 296px;
+          width: 100%;
+          background-color: white;
+          padding: 6px 16px 9px;
+          border: 1px solid $gray;
+          color: $gray;
+          height: 40px;
+          border-radius: 0;
+          -webkit-border-radius: 0;
+          -webkit-appearance: none;
+
+          @include transition(all);
+          @include respond-below(md) {
+            margin-right: 16px;
+            max-width: 296px;
+          }
+          @include respond-below(sm) {
+            max-width: 100%;
+            margin-right: 0;
+            margin-bottom: 8px;
+          }
+
+          &:hover, &:focus, &:active {
+            border: 1px solid $orange;
+          }
+
+          &::placeholder {
+            color: $gray;
+            font-size: 16px;
+            line-height: 22px;
+          }
+        }
+
+        .form--button--wrapper {
+          border: 1px solid transparent;
+          @include transition(all);
+          &:hover {
+            border: 1px solid var(--btnColor);
+            .form--button {
+              bottom: 4px;
+              right: 4px;
+            }
+          }
+        }
+        .form--button {
+          position: relative;
+          bottom: 0;
+          right: 0;
+          font-family: "Graphik Semibold", sans-serif;
+          font-weight: 600;
+          font-size: 16px;
+          line-height: 22px;
+          padding: 9px 21px;
+          color: white;
+          background-color: var(--btnColor);
+          border: 1px solid var(--btnColor);
+          cursor: pointer;
+          height: 40px;
+          @include transition(all);
+          @include respond-below(lg) {
+            width: 100%;
+          }
+        }
+      }
+
+      .social-list {
+        display: flex;
+        @include respond-below(sm) {
+          justify-content: center;
+        }
+        a {
+          border: 1px solid transparent;
+          border-radius: 100%;
+          width: 42px;
+          height: 42px;
+          @include transition(all);
+          @include respond-below(xs) {
+            width: 40px;
+            height: 40px;
+          }
+          &:hover {
+            border: 1px solid var(--orange);
+            svg {
+              bottom: 3px;
+              right: 3px;
+            }
+          }
+        }
+        svg {
+          position: relative;
+          bottom: 0;
+          right: 0;
+          @include transition(all);
+          .figure {
+            fill: var(--svgColor);
+          }
+          .bg {
+            @include transition(all);
+            fill: white;
+          }
+        }
+        a {
+          &:not(:last-child) {
+            margin-right: 8px;
+            @include respond-below(xs) {
+              margin-right: 16px;
+            }
+          }
+        }
+      }
+
+      .policy {
+        font-family: 'Graphik Regular', sans-serif;
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400;
+        color: var(--policyColor);
+        @include respond-below(sm) {
+          text-align: center;
+        }
+        a {
+          color: var(--policyHoverColor);
+          text-decoration: underline 1px rgba(255, 255, 255, 0);
+          transition: text-decoration-color 300ms;
+          text-underline-offset: 5px;
+          &:hover, &:focus, &:active {
+            text-decoration-color: var(--policyHoverColor);
+          }
+        }
+      }
+    }
+  }
+
+  .big-letter {
+    position: absolute;
+    bottom: -5px;
+    right: 0;
+    z-index: 1;
+    @include respond-below(xlg) {
+      right: -130px;
+    }
+    @include respond-below(sm) {
+      right: -42px;
+      bottom: -52px;
+    }
+
+    svg {
+      fill: var(--letterColor);
+    }
+  }
+
+  .success {
+    display: flex;
+    padding: 53px 8px 53px 8px; // за вычетом внешнего отступа у .wrapper
+    z-index: 10;
+    position: relative;
+    @include respond-below(md) {
+      flex-direction: column;
+      align-items: center;
+    }
+    @include respond-below(xs) {
+      padding-bottom: 150px;
+    }
+
+    .img {
+      margin-right: 24px;
+      @include respond-below(md) {
+        margin-right: 0;
+        margin-bottom: 24px;
+      }
+      .fill {
+        fill: var(--successImageColor);
+      }
+    }
+    .text {
+      font-family: "Kazimir Bold", sans-serif;
+      max-width: 510px;
+      width: 100%;
+      font-size: 20px;
+      line-height: 26px;
+      font-weight: 700;
+      color: var(--successText);
+      @include respond-below(md) {
+        text-align: center;
+      }
+      @include respond-below(xs) {
+        font-size: 18px;
+        line-height: 26px;
+      }
+    }
+  }
+}
+
+.important--short-form {
+  @include respond-below(lg) {
+    &.new_sub--white {
+      --policyColor: #{$gray};
+    }
+    &.new_sub--orange {
+      --policyColor: #{$black};
+    }
+    &.new_sub--black {
+      --policyColor: #{$gray};
+    }
+
+    .form {
+      width: 100%;
+      margin-right: 0 !important;
+    }
+    .form--row {
+      flex-direction: column !important;
+      align-items: center !important;
+    }
+    .form--container {
+      flex-direction: column !important;
+      margin: 0 0 16px 0 !important;
+    }
+    input[type="email"] {
+      max-width: 100% !important;
+      margin-right: 0 !important;
+      margin-bottom: 8px !important;
+    }
+    &.wrapper {
+      overflow: hidden;
+      padding: 16px;
+    }
+    .subscribe {
+      &--title, &--description {
+        text-align: center;
+        margin-bottom: 16px !important;
+      }
+    }
+    .policy {
+      text-align: center;
+      color: var(--policyColor);
+    }
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.no-user-select {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+#modal_subs {
+  .fancybox-button {
+    svg {
+      transition: all 0.3s ease;
+
+      @include respond-below(lg) {
+        color: black !important;
+      }
+    }
+
+    &:hover {
+      svg {
+        @include respond-below(lg) {
+          color: #df5b35 !important;
+        }
+      }
+    }
+  }
+}

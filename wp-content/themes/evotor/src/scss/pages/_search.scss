@@ -1,0 +1,59 @@
+.page-search {
+  .empty-gray-section {
+    height: 80px;
+    background-color: var(--gray);
+    @include respond-below(xs) {
+      height: 56px;
+    }
+  }
+
+  // Панель поиска
+  @import "components/search-page/search-panel";
+
+  .found-posts-count {
+    margin-top: 40px;
+    @include respond-below(xlg) {
+      margin-top: 32px;
+    }
+    &.content-padding {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    p {
+      color: var(--basicGray);
+      font-size: 16px;
+      line-height: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--grayDarker);
+    }
+  }
+
+  @import "components/search-page/search-results";
+  @import "components/search-page/no-results";
+
+  .top-posts {
+    background-color: var(--gray);
+    .section-title {
+      color: var(--black);
+    }
+    .owl-prev, .owl-next {
+      &:hover {
+        border: 1px solid var(--orange) !important;
+      }
+    }
+    .owl-nav {
+      .arrow-wrapper {
+        background-color: var(--orange) !important;
+        img {
+          filter: brightness(20);
+        }
+      }
+    }
+    .owl-dots .owl-dot {
+      border: 1px solid var(--orange);
+      &.active {
+        background-color: var(--orange);
+      }
+    }
+  }
+}

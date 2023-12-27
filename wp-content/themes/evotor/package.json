@@ -1,0 +1,39 @@
+{
+  "name": "evotor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --env=watch=watch",
+    "devNoWatch": "webpack",
+    "prod": "webpack --env=mode=production",
+    "prodAndWatch": "webpack --env=mode=production --env=watch=watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "privete": true,
+  "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
+    "jquery": "^3.6.0",
+    "masonry-layout": "^4.2.2",
+    "owl.carousel": "^2.3.4",
+    "scss-reset": "^1.2.2",
+    "swiper": "^11.0.5"
+  },
+  "devDependencies": {
+    "@types/fancybox": "^3.5.2",
+    "@types/jquery": "^3.5.5",
+    "@types/masonry-layout": "^4.2.5",
+    "@types/owl.carousel": "^2.3.3",
+    "@types/sass-loader": "^8.0.1",
+    "@types/webpack": "^5.28.1",
+    "@types/webpack-stream": "^3.2.12",
+    "css-loader": "^6.7.3",
+    "mini-css-extract-plugin": "^2.7.5",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "terser-webpack-plugin": "^5.3.7",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.0.1"
+  }
+}

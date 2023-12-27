@@ -1,0 +1,53 @@
+@font-face {
+  font-family: 'Kazimir-Bold';
+  src: url('/wp-content/themes/evotor/fonts/kazimir-bold-web.woff2') format('woff2'),
+       url('/wp-content/themes/evotor/fonts/kazimir-bold-web.woff') format('woff'),
+       url('/wp-content/themes/evotor/fonts/kazimir-bold-web.ttf') format('truetype');
+  font-display: swap;
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Kazimir Bold';
+  src: url('/wp-content/themes/evotor/fonts/kazimir-bold-web.woff2') format('woff2'),
+       url('/wp-content/themes/evotor/fonts/kazimir-bold-web.woff') format('woff'),
+       url('/wp-content/themes/evotor/fonts/kazimir-bold-web.ttf') format('truetype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik Regular';
+  src: url('/wp-content/themes/evotor/fonts/graphik-regular-web.eot');
+  src: url('/wp-content/themes/evotor/fonts/graphik-regular-web.eot#iefix') format('embedded-opentype'),
+       url('/wp-content/themes/evotor/fonts/graphik-regular-web.woff2') format('woff2'),
+       url('/wp-content/themes/evotor/fonts/graphik-regular-web.woff') format('woff'),
+       url('/wp-content/themes/evotor/fonts/graphik-regular-web.ttf') format('truetype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik Semibold';
+  src: url('/wp-content/themes/evotor/fonts/graphik-semibold.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Graphik Bold';
+  src: url('/wp-content/themes/evotor/fonts/graphik-bold-web.eot');
+  src: url('/wp-content/themes/evotor/fonts/graphik-bold-web.eot#iefix') format('embedded-opentype'),
+       url('/wp-content/themes/evotor/fonts/graphik-bold-web.woff2') format('woff2'),
+       url('/wp-content/themes/evotor/fonts/graphik-bold-web.woff') format('woff'),
+       url('/wp-content/themes/evotor/fonts/graphik-bold-web.ttf') format('truetype');
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal;
+}
+
+

@@ -1,0 +1,214 @@
+.subscribe {
+	background: linear-gradient(180deg, #FF33BA 0%, #FF7800 100%);
+	border-radius: 4px;
+	color:#fff;
+	display: block;
+	font-family: $serif;
+	font-size: 24px;
+	line-height: normal;
+	margin-left: 10px;
+  margin-right: 10px;
+	padding:25px;
+	width: 100%;
+  position: relative;
+  
+  &--wide {
+    margin: 0 -10px 40px -30px;
+
+    @media #{$mq-mobile} {
+      margin: 0 0px 40px -20px;
+    }
+  }
+
+	&--error {
+		margin-bottom: 40px;
+	}
+
+	&--error &__col--center:after {
+		content:'Не похоже на почту';
+		position: absolute;
+		bottom:-40px;
+		color:#000;
+		display: block;
+	}
+
+
+	@media #{$mq-tablet-max}{
+		padding-left: 35px;
+		padding-right: 35px;
+		font-size: 20px;
+	}
+
+	.row {
+		justify-content: center;
+
+		@media #{$mq-tablet-max}{
+			flex-direction: column;
+		}
+	}
+
+	&__form {
+		display: block;
+	}
+
+	&--success &__form {
+		display: none;
+	}
+
+	&__life {
+		font-family: $serif-700;
+	}
+
+	&__col {
+		@media #{$mq-tablet-max}{
+			flex: 0 0 100%;
+		}
+
+		&--left {
+			flex: 0 0 200px;
+
+			
+		}
+
+		&--center {
+			flex:0 0 400px;
+			padding:0 20px 0 30px;
+
+			@media #{$mq-tablet-max}{
+				padding:10px 0;
+			}
+		}
+
+		&--right {
+			flex: 0 0 212px;
+			width:212px;
+		}
+	}
+
+	&__input {
+		-webkit-appearance:none;
+		background: rgba(255, 255, 255, 0.15);
+		border-radius: 5px;
+		border: 1px solid #FFFFFF;
+		box-sizing: border-box;
+		color:#fff;
+		display: block;
+		font-family: $serif;
+		font-size: 24px;
+		height:63px;
+		line-height: 36px;
+		padding-left: 20px;
+		padding-right: 20px;
+		width: 100%;
+
+
+		@media #{$mq-tablet-max} {
+			font-size: 20px;
+		}
+		
+		&, &:focus {
+			outline: none;
+			box-shadow: none;
+		}
+
+		&::-webkit-input-placeholder {
+			color: #fff;
+			opacity: 1;
+		}
+
+		&:-ms-input-placeholder {
+			color: #fff;
+			opacity: 1;
+		}
+
+		&::-ms-input-placeholder {
+			color: #fff;
+			opacity: 1;
+		}
+
+		&::placeholder {
+			color: #fff;
+			opacity: 1;
+		}
+
+	}
+
+	&--error &__input {
+		background:rgba(0,0,0,0.15);
+		border-color:rgba(0,0,0,0.15);
+	}
+
+	&__button {
+		background: transparent;
+		border-radius: 5px;
+		border: 1px solid #FFFFFF;
+		box-sizing: border-box;
+		color: #FFFFFF;
+		cursor: pointer;
+		display: block;
+		font-family: $serif;
+		font-size: 24px;
+		font-style: normal;
+		font-weight: normal;
+		height:63px;
+		line-height: 36px;
+		text-align: center;
+		width:100%;
+
+		&:hover {
+			background: #fff;
+			color:$orange;
+		}
+
+		@media #{$mq-tablet-max} {
+			font-size: 20px;
+		}
+
+		&,&:focus,&:active {
+			-webkit-appearance:none;
+			outline: none;
+			box-shadow: none;
+		}
+
+	}
+
+
+	&__success {
+		display: none;
+		background-image: url('../img/subscribe_success.svg');
+		background-repeat: no-repeat;
+		background-position: 0 0;
+		padding-left: 70px;
+		height:55px;
+		align-items: center;
+		margin-left: 238px;
+
+		@media #{$mq-tablet-max} {
+			padding-left: 0;
+			padding-top: 70px;
+			height:auto;
+			margin-left: 0;
+		}
+
+		&__email {
+			font-family: $serif-700;
+			display: inline-block;
+			margin-left: 10px;
+		}
+
+
+
+	}
+
+	&--success &__success {
+		display: flex;
+
+		@media #{$mq-tablet-max} {
+			display: block;
+		}
+
+
+	}
+
+
+}

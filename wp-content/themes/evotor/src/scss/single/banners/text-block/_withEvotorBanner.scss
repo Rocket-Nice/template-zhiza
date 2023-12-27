@@ -1,0 +1,202 @@
+.withEvotorBanner {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  @include respond-below(md) {
+    flex-direction: row-reverse;
+    padding: 24px;
+    justify-content: space-between;
+  }
+  @include respond-below(xs) {
+    flex-direction: column;
+  }
+
+  .banner-title {
+    font-family: Kazimir-Bold, sans-serif;
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    @include respond-below(md) {
+      font-size: 24px;
+      line-height: 30px;
+    }
+  }
+
+  .content-wrapper {
+    @include respond-below(md) {
+      max-width: 400px;
+    }
+    @include respond-below(sm) {
+      .btn--wrapper {
+        max-width: 100%;
+        width: 100%;
+      }
+    }
+  }
+
+  .banner-text {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 400;
+    color: black;
+
+    a {
+      color: var(--orange);
+    }
+  }
+
+  .img-container {
+    margin-bottom: 16px;
+    @include respond-below(md) {
+      flex-shrink: 0;
+    }
+
+    @include respond-below(xs) {
+      max-width: 202px;
+      width: 100%;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .btn--wrapper {
+    margin-top: 16px;
+    @include respond-below(md) {
+      width: max-content;
+    }
+
+    .btn {
+      @include respond-below(md) {
+        padding: 10px 30px;
+      }
+    }
+  }
+
+
+  &.square-style {
+    border: 1px solid var(--grayDarker);
+    background-color: white;
+  }
+
+  &.fire-style {
+    position: relative;
+    border: 1px solid var(--yellow);
+    background-color: var(--yellow);
+    margin-top: 56px;
+    border-radius: 0 0 4px 4px;
+
+    @include respond-below(xs) {
+      margin-right: 0;
+      margin-top: 75px;
+    }
+
+    .banner-text a {
+      color: black;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+  }
+
+  .fire {
+    position: absolute;
+    width: 240px;
+    height: 239px;
+    top: -165px;
+    left: -1px;
+    z-index: -1;
+    @include respond-below(md) {
+      top: -75px;
+      left: -1px;
+      width: 100.3%;
+      height: 75px;
+    }
+    @include respond-below(xs) {
+      left: 0;
+    }
+
+    img {
+      @include respond-below(md) {
+        width: 100%;
+        object-fit: cover;
+        height: 100%;
+      }
+    }
+  }
+
+  &.triangle-style {
+    position: relative;
+    background-color: white;
+    border-radius: 0 0 4px 4px;
+
+    @include respond-below(md) {
+      margin-top: 60px;
+    }
+
+    @include respond-below(mxs) {
+      margin-top: 80px;
+    }
+
+    &.__without-photo {
+      @include respond-below(md) {
+        flex-direction: row;
+      }
+    }
+  }
+
+  .triangle {
+    position: absolute;
+    width: 280px;
+    height: 354px;
+    top: -100px;
+    left: -2px;
+    z-index: -1;
+
+    @include respond-below(lg) {
+      top: -71px;
+      width: 242px;
+      height: 53px;
+
+      img {
+        width: 242px;
+      }
+    }
+
+    @include respond-below(md) {
+      left: 0;
+      top: -44px;
+      width: 100%;
+      height: 53px;
+    }
+    @include respond-below(xs) {
+      height: 60px;
+      top: -60px;
+    }
+
+    img {
+      width: 100%;
+      @include respond-below(md) {
+        object-fit: cover;
+        height: 53px;
+      }
+      @include respond-below(xs) {
+        height: 60px;
+      }
+    }
+  }
+
+  &.__without-photo {
+    @include respond-below(md) {
+      flex-direction: row;
+    }
+
+    .content-wrapper {
+      @include respond-below(md) {
+        max-width: unset;
+      }
+    }
+  }
+}

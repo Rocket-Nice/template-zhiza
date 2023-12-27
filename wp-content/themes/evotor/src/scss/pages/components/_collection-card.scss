@@ -1,0 +1,89 @@
+@import '../../basic/mixins';
+
+.collection-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.collection-card {
+  width: 100%;
+  max-width: 23.2%;
+  margin-bottom: 24px; // Если между столбцами через js, то нижний отступ только через margin.
+  border: 1px solid white;
+  transition: 0.3s ease all !important;
+  cursor: pointer;
+
+  @include respond-below(xlg) {
+    max-width: 31%;
+  }
+  @include respond-below(sm) {
+    max-width: 48%;
+  }
+  @include respond-below(mxs) {
+    max-width: 100%;
+    margin-bottom: 16px;
+  }
+
+  .relative-position {
+    background-color: white;
+    @include transition(all);
+    &:hover, &:active, &:focus {
+      transform: translate(-6px, -6px);
+    }
+  }
+
+  .img-container {
+    width: 100%;
+    height: 146px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .card-body {
+    padding: 16px;
+  }
+
+  .title {
+    font-family: Graphik Semibold, sans-serif;
+    font-weight: 600;
+    line-height: 22px;
+    font-size: 16px;
+    left: 22px;
+    margin-bottom: 4px;
+    color: black;
+  }
+  .post-info {
+    .post-category {
+      position: relative;
+      font-family: Graphik Semibold, sans-serif;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 16px;
+      color: $orange;
+      margin-right: 22px;
+      text-transform: uppercase;
+
+      &:after {
+        position: absolute;
+        content: '';
+        right: -15px;
+        bottom: 4px;
+        width: 4px;
+        height: 4px;
+        background-color: $orange;
+        transform: rotate(45deg);
+      }
+    }
+    .post-publish {
+      font-size: 12px;
+      line-height: 16px;
+      color: #a3a3a3;
+    }
+  }
+}

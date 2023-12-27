@@ -1,0 +1,31 @@
+.common-text {
+  margin-bottom: 56px;
+  position: relative;
+
+  @include respond-below(md) {
+    margin-bottom: 48px;
+  }
+
+  @include respond-below(xs) {
+    margin-bottom: 40px;
+  }
+
+  &:last-child {
+    @include respond-below(md) {
+      margin-bottom: 56px;
+    }
+    @include respond-below(xs) {
+      margin-bottom: 40px;
+    }
+  }
+}
+
+// Баннеры с правой части текста
+@import "banners/text-block/singleBanner";
+@import "banners/text-block/sbsBanner";
+@import "banners/text-block/zhizaRecomendedBanner";
+@import "banners/text-block/zhizaRecomendedBannerDesc";
+@import "banners/text-block/withEvotorBanner";
+@import "banners/text-block/withEvotorDesc";
+@import "banners/gallery";
+@import "banners/table";

@@ -1,0 +1,332 @@
+.comment {
+  &_block {
+    .sgr-main {
+      @include respond-below(xs) {
+        > div {
+          width: 100% !important;
+          max-width: 304px;
+        }
+      }
+      > div > div {
+        width: 100% !important;
+        max-width: 304px;
+        > iframe {
+          width: 100% !important;
+          max-width: 304px;
+        }
+      }
+    }
+
+    margin-bottom: 56px;
+
+    @include respond-below(xlg) {
+      padding: 0 32px;
+    }
+    @include respond-below(md) {
+      padding: 0 24px;
+    }
+    @include respond-below(xs) {
+      padding: 0 16px;
+      margin-bottom: 40px;
+    }
+
+    &__title {
+      color: var(--black);
+      font-size: 32px;
+      font-style: normal;
+      font-family: Kazimir-Bold, sans-serif;
+      font-weight: 700;
+      line-height: 38px;
+      margin-bottom: 32px;
+      -webkit-font-smoothing: antialiased;
+
+      @include respond-below(md) {
+        font-size: 24px;
+        line-height: 30px;
+        margin-bottom: 24px;
+      }
+    }
+  }
+
+  &_list {
+    margin-bottom: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .children {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    > .children {
+      margin-left: 64px;
+      @include respond-below(sm) {
+        margin-left: 76px;
+      }
+      @include respond-below(xs) {
+        margin-left: 51px;
+      }
+    }
+  }
+
+  &_item {
+    background: #ECEBE9;
+    padding: 16px;
+
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      p {
+        font-family: 'Graphik Regular', sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+        word-break: break-word;
+
+        a {
+          word-break: break-all;
+        }
+      }
+    }
+  }
+
+  &_rhombus {
+    margin: 0 8px;
+    width: 6px;
+    height: 6px;
+    display: flex;
+  }
+
+  &_author {
+    display: inline-flex;
+    align-items: center;
+
+    &__name {
+      font-family: 'Graphik Semibold', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 22px;
+    }
+
+    &__date {
+      font-family: 'Graphik Regular', sans-serif;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 16px;
+    }
+  }
+
+  &_reply {
+    a {
+      font-family: 'Graphik Semibold', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 22px;
+      text-decoration-line: underline;
+      color: var(--orange);
+      display: inline-block;
+      text-underline-offset: 3px;
+    }
+
+    &_title {
+      color: var(--placeholder-color);
+
+      font-family: 'Graphik Semibold', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 22px;
+
+      @include respond-below(sm) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &_parent {
+    display: inline-flex;
+    gap: 4px;
+
+    color: var(--placeholder-color);
+    font-family: 'Graphik Regular', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 16px;
+
+    &__name {
+      font-family: 'Graphik Semibold', sans-serif;
+      font-weight: 600;
+    }
+  }
+
+  &-form textarea {
+    border: 1px solid var(--grayDarker);
+    background: #FFF;
+    width: 100%;
+    padding: 16px;
+    resize: none;
+    height: 121px;
+    caret-color: var(--grayDarker);
+    margin-bottom: 16px;
+    font-size: 16px;
+    line-height: 22px;
+    @include respond-below(sm) {
+      padding: 16px;
+      font-size: 16px;
+      line-height: 22px;
+      height: 96px;
+    }
+    @include respond-below(xs) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    &::placeholder {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 22px;
+
+      @include respond-below(xs) {
+        font-size: 12px;;
+      }
+    }
+  }
+
+  &_bot {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+
+    > p, input {
+      width: 100%;
+    }
+  }
+
+  &_consent {
+    margin-bottom: 16px;
+  }
+
+  &_input {
+    border: 1px solid var(--grayDarker);
+    background: #FFF;
+    padding: 9px 16px;
+    font-size: 16px;
+    line-height: 22px;
+    @include respond-below(sm) {
+      padding: 9px 16px;
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &_lable {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  &_checkbox {
+    display: none;
+
+    &:checked ~ .comment_checkbox__custom:after {
+      opacity: 1;
+    }
+
+    &__custom {
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      margin-top: 4px;
+      flex: 1 0 auto;
+
+      &:after {
+        content: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_1223_626)'%3E%3Cpath d='M1.77778 0H14.2222C15.2 0 16 0.8 16 1.77778V14.2222C16 15.2 15.2 16 14.2222 16H1.77778C0.8 16 0 15.2 0 14.2222V1.77778C0 0.8 0.8 0 1.77778 0Z' fill='white'/%3E%3Cpath d='M14.2222 0H1.77778C0.8 0 0 0.8 0 1.77778V14.2222C0 15.2 0.8 16 1.77778 16H14.2222C15.2 16 16 15.2 16 14.2222V1.77778C16 0.8 15.2 0 14.2222 0ZM6.8533 11.8133C6.5067 12.16 5.94667 12.16 5.6 11.8133L2.40889 8.6222C2.06222 8.2756 2.06222 7.7156 2.40889 7.3689C2.75556 7.0222 3.31556 7.0222 3.66222 7.3689L6.2222 9.9289L12.3378 3.81333C12.6844 3.46667 13.2444 3.46667 13.5911 3.81333C13.9378 4.16 13.9378 4.72 13.5911 5.06667L6.8533 11.8133Z' fill='%23DF5B35'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_1223_626'%3E%3Crect width='16' height='16' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+        position: absolute;
+        opacity: 0;
+        width: 16px;
+        height: 16px;
+        border-radius: 2px;
+        transition: 0.1s;
+      }
+
+      &:before {
+        position: absolute;
+        border-radius: 2px;
+        content: "";
+        width: 16px;
+        height: 16px;
+        opacity: 1;
+        border: 1px solid #C1C1C1;
+      }
+    }
+  }
+
+  &_submit {
+    padding: 10px 30px;
+    background: var(--orange) !important;
+    color: #fff;
+    text-align: center;
+
+    font-family: 'Graphik Semibold', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    @include respond-below(sm) {
+      width: 100%;
+    }
+
+    &__container {
+      margin-top: 16px;
+    }
+  }
+
+  &_awaiting {
+    border-radius: 4px;
+    background: var(--orange);
+    padding: 9px 16px;
+    width: 100%;
+    color: #fff;
+
+    font-family: 'Graphik Semibold', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 22px;
+    @include respond-below(sm) {
+      padding: 8px;
+      width: 100%;
+    }
+  }
+
+  &_cancel {
+    float: right;
+
+    a {
+      color: var(--orange);
+      font-family: 'Graphik Regular', sans-serif;
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 22px;
+      display: block;
+      margin-bottom: 13px;
+    }
+  }
+}
+
+// На локальном показывается ссылка на отключение капчи в админке. Не знаю, будет ли на проде, но скрою визуально.
+.sgr-infotext {
+  display: none;
+}

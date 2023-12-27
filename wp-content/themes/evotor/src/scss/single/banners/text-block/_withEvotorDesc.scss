@@ -1,0 +1,201 @@
+.withEvotorSingle {
+  padding: 24px;
+    display: flex;
+    flex-direction: row-reverse;
+    border-radius: 0 0 4px 4px;
+    justify-content: space-between;
+
+    @include respond-below(xs) {
+      flex-direction: column;
+    }
+
+    .banner-title {
+      margin-top: 16px;
+      font-family: Kazimir-Bold, sans-serif;
+      font-size: 24px;
+      line-height: 26px;
+      font-weight: 700;
+      @include respond-below(md) {
+        margin-top: 0;
+        font-size: 24px;
+        line-height: 30px;
+      }
+      @include respond-below(mxs) {
+        margin-top: 16px;
+      }
+    }
+
+    .content-wrapper {
+      @include respond-below(md) {
+        max-width: 100%;
+        width: 100%;
+      }
+      @include respond-below(sm) {
+        margin-right: 24px;
+      }
+    }
+    .banner-text {
+      font-size: 16px;
+      line-height: 22px;
+      font-weight: 400;
+      color: black;
+      margin-top: 16px;
+      a {
+        color: var(--orange);
+      }
+    }
+    .img-container {
+      flex-shrink: 0;
+
+      @include respond-below(xs) {
+        max-width: 202px;
+        width: 100%;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .btn--wrapper {
+      margin-top: 16px;
+      width: max-content;
+      @include respond-between(xs, md) {
+        max-width: 204px;
+      }
+      @include respond-below(xs) {
+        width: 100%;
+      }
+      .btn {
+        padding: 10px 30px;
+      }
+    }
+
+
+    &.square-style {
+      border: 1px solid var(--grayDarker);
+      background-color: white;
+    }
+    &.fire-style {
+      position: relative;
+      border: 1px solid var(--yellow);
+      background-color: var(--yellow);
+      margin-top: 56px;
+
+      @include respond-below(mdxs) {
+        margin-top: 40px;
+      }
+
+      .banner-text a {
+        color: black;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+      }
+
+      .square {
+        background: gray;
+      }
+    }
+
+    .fire {
+      position: absolute;
+      top: -68px;
+      left: -1px;
+      width: 100.29%;
+      height: 75px;
+      z-index: -1;
+
+      @include respond-below(sm) {
+        height: 71px;
+      }
+      @include respond-below(middlexs) {
+        top: -63px;
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
+        @include respond-below(sm) {
+          height: 71px;
+        }
+      }
+    }
+
+    &.triangle-style{
+      position: relative;
+      background-color: white;
+
+      @include respond-below(md) {
+        margin-top: 60px;
+      }
+
+      @include respond-below(mxs) {
+        margin-top: 80px;
+      }
+
+      .__without-photo{
+
+        @include respond-below(lg) {
+          border-radius: 0;
+
+          .triangle {
+          top: -109px;
+          width: 242px;
+
+          img{
+            width: 242px;
+          }
+        }
+        }
+
+        @media(min-width: 1201px) {
+
+          .triangle {
+            width: 360px;
+            top: -156px;
+
+            img {
+              width: 373px;
+            }
+          }
+        }
+      }
+    }
+
+    .triangle{
+      position: absolute;
+      left: -1px;
+      top: -52px;
+      width: 100%;
+      height: auto;
+      z-index: -1;
+
+      @include respond-below(lg) {
+
+        img{
+          width: 242px;
+        }
+      }
+
+      @include respond-below(xs) {
+        right: unset;
+        top: -300px;
+        width: 100%;
+      }
+      @include respond-below(largexs) {
+        top: -71px;
+      }
+      @include respond-below(exxs) {
+        top: -250px;
+      }
+      @include respond-below(mdxs) {
+        top: -70px;
+      }
+      @include respond-below(exs) {
+        top: -58px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }

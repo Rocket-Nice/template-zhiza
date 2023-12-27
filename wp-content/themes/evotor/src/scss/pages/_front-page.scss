@@ -1,0 +1,18 @@
+// Первый экран. Слева превью статьи, справа описание проекта.
+@import "components/front-page/project-preview";
+// Второй экран "Важное".
+@import "components/front-page/important-posts";
+// Третий экран "Законы".
+@import "components/front-page/laws";
+// Бегущая строка Инструменты для бизнеса
+@import "components/front-page/running-line";
+// Баннеры Инструменты для бизнеса
+@import "components/front-page/tools-for-business";
+// Топ статей
+@import "components/front-page/top-posts";
+// Форма подписки на главной странице
+@import "components/front-page/front-page-subscribe-form";
+// Блок Подборки
+@import "components/front-page/collections";
+// Рандомная подборка коллекции
+@import "components/front-page/random-collection";

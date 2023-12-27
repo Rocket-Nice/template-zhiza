@@ -1,0 +1,51 @@
+.footer {
+	background: #F4F4F4;
+	border-radius: 5px;
+	color:#000;
+	font-family: $serif;
+	font-size: 24px;
+	line-height: 36px;
+	margin-bottom: 45px;
+	padding:30px 20px;
+
+	@media #{$mq-tablet-max} {
+		font-size: 20px;
+	}
+
+	a {
+		color:$orange;
+
+		&:hover {
+			color:darken($orange,15%);
+		}
+	}
+
+	&__col {
+		&--center {
+			text-align: center;
+
+			@media #{$mq-tablet-max} {
+				text-align: left;
+			}
+		}
+
+		&--right {
+			text-align: right;
+
+			@media #{$mq-tablet-max} {
+				text-align: left;
+			}
+		}
+	}
+
+	&__menu {
+		&__link {
+			display: inline-block;
+			margin-left: 20px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+		}
+	}
+}

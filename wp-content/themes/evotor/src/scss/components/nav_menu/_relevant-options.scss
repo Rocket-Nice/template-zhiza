@@ -1,0 +1,67 @@
+.relevant-options {
+  margin-top: 4px;
+  background-color: white;
+  width: 100%;
+  max-width: 1032px;
+  box-sizing: border-box;
+  padding: 12px 24px;
+  opacity: 0;
+  visibility: hidden;
+  @include respond-below(xlg) {
+    padding: 12px 16px;
+  }
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.options-list {
+  display: flex;
+  flex-direction: column;
+
+  .option {
+    a {
+      font-size: 16px;
+      line-height: 22px;
+      color: #000;
+      display: block;
+      padding: 4px 0;
+      font-family: Graphik Regular, sans-serif;
+      @include transition(all);
+      @include respond-below(xlg) {
+        font-size: 12px;
+        line-height: 16px;
+      }
+    }
+    .relevanssi-query-term {
+      color: #000;
+      font-weight: 600;
+      @include transition(all);
+    }
+    &:hover, &:active, &:focus {
+      a {
+        color: var(--orange) !important;
+        text-decoration-color: var(--orange);
+      }
+      .relevanssi-query-term {
+        color: var(--orange) !important;
+      }
+    }
+  }
+
+  // Базовое отображение, на случай, когда строка поиска пустая, и появляются подсказки.
+  &.basic {
+    .option a {
+      color: var(--placeholder-color);
+    }
+  }
+  &:not(.basic) {
+    a {
+      text-decoration: underline;
+      color: #000;
+      text-underline-offset: 4px;
+    }
+  }
+}
